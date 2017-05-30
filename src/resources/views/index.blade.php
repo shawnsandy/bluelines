@@ -1,5 +1,5 @@
-@extends(':package_name::shared.app')
-@section('title', ':package_name')
+@extends('bluelines::shared.app')
+@section('title', 'bluelines')
 @section('content')
-  @include(':package_name::shared.index')
+  @include('bluelines::shared.index')
 @endsection

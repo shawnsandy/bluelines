@@ -1,17 +1,17 @@
 {
-    "name": ":vendor/:package_name",
+    "name": "shawnsandy/bluelines",
     "type": "library",
-    "description": ":package_description",
+    "description": "A content design and management system for apps",
     "keywords": [
-        ":vendor",
-        ":package_name"
+        "shawnsandy",
+        "bluelines"
     ],
-    "homepage": "https://github.com/:vendor/:package_name",
+    "homepage": "https://github.com/shawnsandy/bluelines",
     "license": "MIT",
     "authors": [{
-        "name": ":author_name",
-        "email": ":author_email",
-        "homepage": ":author_website",
+        "name": "Shawn Sandy",
+        "email": "shawnsandy04@gmail.com",
+        "homepage": "https://github.com/shawnsandy",
         "role": "Developer"
     }],
     "require": {
@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            ":vendor\\:package_name\\": "src"
+            "ShawnSandy\\Bluelines\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            ":vendor\\:package_name\\": "tests"
+            "ShawnSandy\\Bluelines\\": "tests"
         }
     },
     "scripts": {

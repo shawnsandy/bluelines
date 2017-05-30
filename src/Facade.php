@@ -6,21 +6,21 @@
      * Time: 10:15 PM
      */
 
-    namespace :namespace;
+    namespace ShawnSandy\Bluelines;
 
 
 
 
     use Illuminate\Support\Facades\Facade;
 
-    class :providerFacade extends Facade
+    class BluelinesFacade extends Facade
     {
 
         /**
          *
          */
         protected static function  getFacadeAccessor() {
-            return ":provider";
+            return "Bluelines";
         }
 
     }

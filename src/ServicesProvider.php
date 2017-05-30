@@ -1,14 +1,14 @@
 <?php
 
-namespace :namespace;
+namespace ShawnSandy\Bluelines;
 
 use Illuminate\Support\ServiceProvider;
 
 /**
  * Class Provider
- * @package :namespace
+ * @package ShawnSandy\Bluelines
  */
-class :providerServicesProvider extends ServiceProvider
+class BluelinesServicesProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
@@ -22,11 +22,11 @@ class :providerServicesProvider extends ServiceProvider
         /**
          * Package views
          */
-        $this->loadViewsFrom(__DIR__ . '/resources/views', ':package_name');
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'bluelines');
         $this->publishes(
             [
-                __DIR__ . '/resources/views' => resource_path('views/vendor/:package_name'),
-            ], ':package_name-views'
+                __DIR__ . '/resources/views' => resource_path('views/vendor/bluelines'),
+            ], 'bluelines-views'
         );
 
         /**
@@ -34,17 +34,17 @@ class :providerServicesProvider extends ServiceProvider
          */
         $this->publishes(
             [
-                __DIR__.'/resources/assets/js/' => public_path('assets/:package_name/js/'),
+                __DIR__.'/resources/assets/js/' => public_path('assets/bluelines/js/'),
                 __DIR__.'/public/assets/' => public_path('assets/')
-            ], ':package_name-assets'
+            ], 'bluelines-assets'
         );
 
         /**
          * Package config
          */
         $this->publishes(
-            [__DIR__ . '/config/config.php' => config_path(':package_name.php')],
-            ':package_name-config'
+            [__DIR__ . '/config/config.php' => config_path('bluelines.php')],
+            'bluelines-config'
         );
 
         if (!$this->app->runningInConsole()) :
@@ -65,12 +65,12 @@ class :providerServicesProvider extends ServiceProvider
     {
 
        $this->mergeConfigFrom(
-            __DIR__ . '/config/config.php', ':package_name'
+            __DIR__ . '/config/config.php', 'bluelines'
         );
 
         $this->app->bind(
-        ':provider', function () {
-        return new :provider();
+        'Bluelines', function () {
+        return new Bluelines();
         }
         );
     }

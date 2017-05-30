@@ -1,6 +1,6 @@
 <?php
 
-namespace :namespace;
+namespace ShawnSandy\Bluelines;
 
 class ExampleTest extends \PHPUnit_Framework_TestCase
 {
