@@ -16,7 +16,7 @@ A content design and management system for apps
 Via Composer - dev-master branch ( is probably the most stable)
 
 ``` bash
-$ composer require shawnsandy/bluelines dev-beta
+$ composer require shawnsandy/bluelines dev-master
 ```
 ## Setup
 
