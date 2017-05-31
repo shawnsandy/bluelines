@@ -43,7 +43,10 @@
              * Package config
              */
             $this->publishes(
-                [__DIR__ . '/config/config.php' => config_path('bluelines.php')],
+                [
+                    __DIR__ . '/config/config.php' => config_path('bluelines/settings.php'),
+                    __DIR__ . '/config/forms.php' => config_path('bluelines/forms.php'),
+                ],
                 'bluelines-config'
             );
 
