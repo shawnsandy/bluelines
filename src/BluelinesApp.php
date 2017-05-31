@@ -8,6 +8,7 @@
 
     namespace ShawnSandy\Bluelines;
 
+    use ShawnSandy\Dash\Dash;
 
     class BluelinesApp
     {
@@ -16,5 +17,9 @@
             require  __DIR__.'/routes.php';
         }
 
+
+        public function dash() {
+            return app(Dash::class);
+        }
 
     }

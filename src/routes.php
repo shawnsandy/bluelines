@@ -5,3 +5,6 @@
  * Date: 10/27/16
  * Time: 12:58 PM
  */
+
+
+Route::resource('/', '\ShawnSandy\Bluelines\App\Controllers\BluelinesController');
