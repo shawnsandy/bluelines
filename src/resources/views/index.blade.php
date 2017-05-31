@@ -1,9 +1,11 @@
 @extends('bluelines::layouts.layout')
 @section('title', 'bluelines')
 @section('page_title', 'Bluelines')
+
 @section('content')
     <div class="container">
         <h1>Hello world...</h1>
+        <hr>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci architecto beatae, deserunt
             facere facilis fugiat fugit iure iusto laborum, magnam magni perspiciatis, quaerat quia rerum sed totam vero
             voluptates!</p>
