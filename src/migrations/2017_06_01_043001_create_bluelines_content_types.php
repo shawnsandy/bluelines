@@ -29,9 +29,11 @@
                 $table->integer('bluelines_content_type_id');
                 $table->integer('bluelines_option_id');
                 $table->primary(['bluelines_content_type_id', 'bluelines_option_id'], 'type_option');
+                $table->timestamps();
             });
 
         }
+
 
         /**
          * Reverse the migrations.
