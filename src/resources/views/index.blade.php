@@ -4,17 +4,68 @@
 
 @section('content')
     <div class="container">
-        <h1>Hello world...</h1>
-        <hr>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci architecto beatae, deserunt
-            facere facilis fugiat fugit iure iusto laborum, magnam magni perspiciatis, quaerat quia rerum sed totam vero
-            voluptates!</p>
-        <p>Animi eveniet illo inventore natus perferendis qui sapiente velit! Est modi nobis recusandae veritatis. Animi
-            debitis deserunt dolorem earum esse exercitationem, illo, illum impedit quis reiciendis repellat, velit.
-            Quibusdam, vitae!</p>
-        <p>Ad eligendi, illo molestias natus nostrum quasi qui quisquam tempora. Ad consectetur deserunt ducimus eveniet
-            ipsam, nulla quasi repellat. Consectetur dolorum ex fuga necessitatibus nesciunt qui ratione repudiandae
-            tempore ut.</p>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="h1">Latest Content </div>
+            </div>
+
+            <div class="col-md-8">
+
+                <ul class="bluelines-content list-group">
+
+                    <li class="list-group-item">
+                        <div class="">
+                            <h3 class="blue-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h3>
+                            <p class="">
+                                <a href="/" class="btn btn-primary">View / Edit</a>
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item">
+                        <div class="">
+                            <h3 class="blue-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h3>
+                            <p class="">
+                                <a href="/" class="btn btn-primary">View / Edit</a>
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item">
+                        <div class="">
+                            <h3 class="blue-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h3>
+                            <p class="">
+                                <a href="/" class="btn btn-primary">View / Edit</a>
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item">
+                        <div class="">
+                            <h3 class="blue-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h3>
+                            <p class="">
+                                <a href="/" class="btn btn-primary">View / Edit</a>
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item">
+                        <div class="">
+                            <h3 class="blue-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h3>
+                            <p class="">
+                                <a href="/" class="btn btn-primary">View / Edit</a>
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut distinctio nesciunt numquam sapiente
+                    voluptatem? Adipisci, commodi consectetur delectus deserunt dolore eos error esse illo illum iure
+                    ullam vel, voluptatem voluptatum.</p>
+            </div>
+        </div>
     </div>
 
 @endsection

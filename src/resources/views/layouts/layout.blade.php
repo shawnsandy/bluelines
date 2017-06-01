@@ -19,7 +19,6 @@
             font-size: 16px;
         }
 
-
         .form-control {
             border-radius: 0;
         }
