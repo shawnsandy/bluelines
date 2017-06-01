@@ -13,7 +13,7 @@ A content design and management system for apps
 
 ## Install
 
-Via Composer - dev-master branch ( is probably the most stable)
+Via Composer - dev-master branch ( probably the most stable)
 
 ``` bash
 $ composer require shawnsandy/bluelines dev-master
