@@ -16,7 +16,7 @@
 
         public function index()
         {
-            return view("bluelines::index");
+            return view("bluelines::bulma.index");
         }
 
         public function create()

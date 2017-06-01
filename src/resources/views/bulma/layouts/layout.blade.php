@@ -28,6 +28,7 @@
         .form-control {
             border-radius: 0;
         }
+
         .hide {
             display: none;
         }
@@ -45,38 +46,39 @@
 </head>
 
 <body>
+
+
+<nav class="nav">
+    <div class="nav-left">
+        <div class="nav-item">
+           <h3 class="title">@yield('page_title')</h3>
+        </div>
+    </div>
+</nav>
+
+
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h1>
-                @yield('page_title')
-            </h1>
 
-
-        </div>
-        <div class="col-md-6 text-right">
-            <p class="h1">
-                <a href="/" class="btn btn-link btn-lg"><i class="fa fa-home"></i></a>
-            </p>
-        </div>
-        <div class="col-md-12">
+    <div class="columns">
+        <div>
             @include('extras::partials.messages')
         </div>
     </div>
 </div>
 <hr>
 @yield('content')
-<footer>
-    <hr>
-    <p class="text-center">Powered By Laravel  {{ app()->version() }} </p>
+<footer class="columns">
+
+    <div class="column has-text-centered">
+        <hr>
+        <p class="text-center">Powered By Laravel {{ app()->version() }} </p>
+    </div>
+
 </footer>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
 @stack('scripts')
 @stack('inline_scripts')
 </html>
