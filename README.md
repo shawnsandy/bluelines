@@ -16,11 +16,11 @@ A content design and management system for apps
 Via Composer - dev-master branch ( probably the most stable)
 
 ``` bash
-$ composer require shawnsandy/bluelines dev-master
+$ composer require shawnsandy/bluelines:dev-master
 ```
 ## Setup
 
-Add Bluelines provider to your `/config/app.php` 
+Add Bluelines provider to your app.php `/config/app.php` 
 
 ```php
 

@@ -12,8 +12,14 @@
     <![endif]-->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    @if(App::environment() === "production")
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
+    @else
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css.map">
+    @endif
+
     <style>
         p {
             font-size: 16px;
@@ -39,7 +45,7 @@
 </head>
 
 <body>
-<div class="container is-fluid">
+<div class="container">
     <div class="row">
         <div class="col-md-6">
             <h1>
