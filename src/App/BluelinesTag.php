@@ -9,9 +9,12 @@
     namespace ShawnSandy\Bluelines\App;
 
 
-    use Guzzle\Service\Resource\Model;
+
+
+    use Illuminate\Database\Eloquent\Model;
 
     class BluelinesTag extends Model
     {
+        protected $fillable = ['name'];
 
     }

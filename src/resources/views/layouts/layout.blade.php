@@ -66,6 +66,7 @@
     </div>
 </div>
 <hr>
+@include("bluelines::partials.nav")
 @yield('content')
 <footer>
     <hr>
