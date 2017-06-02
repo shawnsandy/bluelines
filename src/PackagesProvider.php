@@ -8,8 +8,12 @@
 
     namespace ShawnSandy\Bluelines;
 
-
+    use Illuminate\Foundation\AliasLoader;
     use Illuminate\Support\ServiceProvider;
+    use ShawnSandy\Dash\Builder\GenerateFormsFields;
+    use ShawnSandy\Dash\DashServicesProvider;
+    use ShawnSandy\Extras\ExtrasFacade;
+    use ShawnSandy\Extras\ExtrasServicesProvider;
 
     class PackagesProvider extends ServiceProvider
     {
@@ -17,15 +21,15 @@
 
         public function register() {
 
-            $this->app()->register(\ShawnSandy\Dash\DashServicesProvider::class);
+            $this->app()->register(DashServicesProvider::class);
 
-            $this->app()->register(\ShawnSandy\Extras\ExtrasServicesProvider::class);
+            $this->app()->register(ExtrasServicesProvider::class);
 
-            $aliases = \Illuminate\Foundation\AliasLoader::getInstance();
+            $aliases = AliasLoader::getInstance();
 
-            $aliases->alias('DashForms', \ShawnSandy\Dash\Builder\GenerateFormsFields::class);
+            $aliases->alias('DashForms', GenerateFormsFields::class);
 
-            $this->alias('Extras', \ShawnSandy\Extras\ExtrasFacade::class);
+            $this->alias('Extras', ExtrasFacade::class);
 
         }
 
