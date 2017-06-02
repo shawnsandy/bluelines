@@ -10,17 +10,26 @@
 
 
     use Illuminate\Routing\Controller;
+    use ShawnSandy\Bluelines\App\Blueline;
 
     class BluelinesController extends Controller
     {
 
         public function index()
         {
-            return view("bluelines::index");
+            $content = Blueline::paginate(20);
+
+            $categories;
+
+            $tags;
+
+            return view("bluelines::index", compact("content", "categories", "tags"));
         }
 
         public function create()
         {
+
+            return view("bluelines::create");
         }
 
         public function store()
