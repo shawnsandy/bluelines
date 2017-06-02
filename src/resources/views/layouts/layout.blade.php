@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
+
+        body {
+            padding: 0 100px;
+        }
+
         p {
             font-size: 16px;
         }
@@ -22,6 +27,7 @@
         .form-control {
             border-radius: 0;
         }
+
         .hide {
             display: none;
         }
@@ -33,13 +39,14 @@
         footer {
             padding: 50px 0;
         }
+
     </style>
     @stack('styles')
     @stack('inline-styles')
 </head>
 
 <body>
-<div class="container is-fluid">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
             <h1>
@@ -62,7 +69,7 @@
 @yield('content')
 <footer>
     <hr>
-    <p class="text-center">Powered By Laravel  {{ app()->version() }} </p>
+    <p class="text-center">Powered By Laravel {{ app()->version() }} </p>
 </footer>
 </body>
 
