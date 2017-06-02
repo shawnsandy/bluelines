@@ -14,7 +14,7 @@
     class Blueline extends Model
     {
         protected $fillable = [
-            "title", "slug", "status", "bluelines_content_type_id", "body",  "featured", "featured_image", "excerpt",
+            "title", "slug", "status", "body",  "featured", "excerpt", "featured_image",
             ];
 
     }
