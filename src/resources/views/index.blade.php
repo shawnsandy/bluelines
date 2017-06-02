@@ -5,13 +5,23 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="h1">Content Admin</div>
-                <hr>
+
+            </div>
+            <div class="col-md-6">
+
+
             </div>
         </div>
+        <hr>
         <div class="row">
             <div class="col-md-9">
+                <p class="">
+                    <a href="#" class="btn btn-default btn-primary">Create A New Post</a>
+                    <a href="#" class="btn btn-default btn-primary">Create A New Page</a>
+                </p>
+                <hr>
                 @if(count($content) < 1)
                     <p class="alert alert-info text-center">Not content found</p>
                 @else
@@ -42,9 +52,13 @@
             </div>
 
             <div class="col-md-3">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut distinctio nesciunt numquam sapiente
-                    voluptatem? Adipisci, commodi consectetur delectus deserunt dolore eos error esse illo illum iure
-                    ullam vel, voluptatem voluptatum.</p>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3>Add a content category</h3>
+                        {{ Form::createForm('ShawnSandy\Bluelines\App\BluelinesCategory') }}
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
