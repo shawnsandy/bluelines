@@ -9,7 +9,9 @@
     namespace ShawnSandy\Bluelines\App\Controllers;
 
 
-    class BluelinesFilesController
+    use Illuminate\Routing\Controller;
+
+    class BluelinesFilesController extends Controller
     {
 
         public function index()

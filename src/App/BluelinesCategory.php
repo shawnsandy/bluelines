@@ -14,6 +14,6 @@
     class BluelinesCategory extends Model
     {
 
-        protected $fillable = ["name", "description", "bluelines_file"];
+        protected $fillable = ["name", "description", "image"];
 
     }
