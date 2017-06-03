@@ -40,17 +40,32 @@
 
             <div class="col-md-4">
 
-                <div class="panel panel-default">
+                <div class="widget-forms panel panel-default">
                     <div class="panel-body">
-                        <h3>Content Categories</h3>
-                        {{ Form::createForm('ShawnSandy\Bluelines\App\BluelinesCategory') }}
+                        <h3>Content Categories
+                            <button class="btn btn-sm btn-default tag-button">New Category</button>
+                        </h3>
+                        <div class="bluform {{ count($errors) ? '' : "hide-element" }} ">
+                            {{ Form::open(['url' => '/bluelines/cats?=new-category', 'name' => 'category' ]) }}
+                            {{ Form::dashFields('ShawnSandy\Bluelines\App\BluelinesCategory') }}
+                            <p class="form-group text-right">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="reset" class="btn btn-default">Reset</button>
+                            </p>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="panel panel-default">
+                <div class="widget-forms panel panel-default">
                     <div class="panel-body">
-                        <h3>Content Tags</h3>
-                        {{ Form::createForm('ShawnSandy\Bluelines\App\BluelinesTag') }}
+                        <h3>Content Tags
+                            <button class="btn btn-sm btn-default tag-button">New Tag</button>
+                        </h3>
+                        <div class="bluform {{ count($errors) ? '' : "hide-element" }}">
+                            {{ Form::createForm('ShawnSandy\Bluelines\App\BluelinesTag') }}
+                        </div>
+
                     </div>
                 </div>
 
@@ -61,3 +76,34 @@
 
 
 @endsection
+
+@push('styles')
+<style>
+    .hide-element {
+        display: none;
+    }
+</style>
+
+@endpush
+
+@push('scripts')
+
+<script>
+
+    $(".widget-forms").each(function () {
+
+        var el = $(this);
+        console.log(el);
+        var button = $(el).find('.tag-button');
+        var frm = $(el).find('.bluform');
+
+        $(button).on('click', function () {
+            console.log($(button).text());
+            $(frm).fadeToggle();
+        });
+
+    });
+
+</script>
+
+@endpush
