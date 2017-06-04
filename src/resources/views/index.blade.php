@@ -82,6 +82,10 @@
     .hide-element {
         display: none;
     }
+    .validate-error {
+        border-color: red;
+        color: red;
+    }
 </style>
 
 @endpush
@@ -102,6 +106,10 @@
             $(frm).fadeToggle();
         });
 
+    });
+
+    $("input,textarea,select").filter('[required]').each(function(){
+        $(this).addClass("validate-error").val('*');
     });
 
 </script>
