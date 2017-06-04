@@ -108,6 +108,16 @@
 
     });
 
+
+
+    $("form").each(function() {
+       var forms = $(this);
+       console.log(forms.length);
+       $(forms).find("input,textarea,select").filter("[required]").each(function(){
+          var rfields = $(this);
+          console.log('tfileds' + rfields.length);
+       });
+    });
     $("input,textarea,select").filter('[required]').each(function(){
         $(this).addClass("validate-error").val('*');
     });
