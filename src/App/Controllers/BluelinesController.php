@@ -11,6 +11,7 @@
 
     use Illuminate\Routing\Controller;
     use ShawnSandy\Bluelines\App\Blueline;
+    use ShawnSandy\Bluelines\App\Request\BluelineRequest;
 
     class BluelinesController extends Controller
     {
@@ -32,8 +33,16 @@
             return view("bluelines::create");
         }
 
-        public function store()
+        public function store(BluelineRequest $request)
         {
+            // dd($request->all());
+            $data = $request->all();
+            $data['author_id'] = 1;
+//            dd($data);
+            if ($post = Blueline::create($data)) {
+                back()->with('success', "Your post {$post->title} was  created");
+            }
+            back()->with('error', "Sorry you post was not save please try again");
         }
 
         public function show()

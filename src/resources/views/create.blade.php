@@ -5,12 +5,6 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
-                <div class="h1">Content Admin</div>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-md-8">
 
                 {{ Form::open(["url" => "/bluelines"]) }}

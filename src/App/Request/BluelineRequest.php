@@ -14,11 +14,22 @@
     class BluelineRequest extends FormRequest
     {
 
-        public function authorize() {
+        public function authorize()
+        {
+            return true;
 
         }
 
-        public function rules() {
+        public function rules()
+        {
+
+            return [
+                "title" => "required|max:200",
+                "slug" => "max:200",
+                "body" => "required|min:50",
+                "featured_image" => "image",
+                "category" => "sometimes|required"
+            ];
 
         }
 
