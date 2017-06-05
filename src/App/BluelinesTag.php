@@ -15,6 +15,6 @@
 
     class BluelinesTag extends Model
     {
-        protected $fillable = ['name'];
+        protected $fillable = ['tag_name'];
 
     }

@@ -52,6 +52,7 @@
                                 <button type="submit" class="btn btn-primary">Save</button>
                                 <button type="reset" class="btn btn-default">Reset</button>
                             </p>
+                            {{ Form::close() }}
                         </div>
 
                     </div>
@@ -63,7 +64,7 @@
                             <button class="btn btn-sm btn-default tag-button">New Tag</button>
                         </h3>
                         <div class="bluform {{ count($errors) ? '' : "hide-element" }}">
-                            {{ Form::createForm('ShawnSandy\Bluelines\App\BluelinesTag') }}
+                            {{ Form::createForm('ShawnSandy\Bluelines\App\BluelinesTag', '/bluelines/tags') }}
                         </div>
 
                     </div>

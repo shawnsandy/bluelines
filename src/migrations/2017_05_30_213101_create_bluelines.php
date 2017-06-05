@@ -58,7 +58,7 @@ class CreateBluelines extends Migration
 
         Schema::create("bluelines_tags", function(Blueprint $table) {
            $table->increments('id');
-           $table->string('name');
+           $table->string('tag_name');
            $table->timestamps();
         });
 
