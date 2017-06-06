@@ -66,7 +66,18 @@
     </div>
 </div>
 <hr>
-@include("bluelines::partials.nav")
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="h1">Content Admin</div>
+        </div>
+        <div class="col-md-8 text-right">
+            @include("bluelines::partials.nav")
+        </div>
+    </div>
+    <hr>
+</div>
+
 @yield('content')
 <footer>
     <hr>
