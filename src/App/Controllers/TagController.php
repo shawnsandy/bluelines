@@ -25,7 +25,7 @@
             ]);
 
             if($validator->fails())
-               return back()->withErrors($validator)
+               return redirect('/bluelines?tag_name')->withErrors($validator)
                     ->withInput();
 
 
