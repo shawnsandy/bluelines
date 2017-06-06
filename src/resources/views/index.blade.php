@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-8">
 
-                @if(count($content) < 1)
+                @if(count($content) < 0)
                     <p class="alert alert-info text-center">Not content found</p>
                 @else
                     <table class="table">
@@ -45,8 +45,8 @@
                         <h3>Content Categories
                             <button class="btn btn-sm btn-default tag-button">New Category</button>
                         </h3>
-                        <div class="bluform {{ count($errors) ? '' : "hide-element" }} ">
-                            {{ Form::open(['url' => '/bluelines/cats?=new-category', 'name' => 'category' ]) }}
+                        <div class="bluform {{ count($errors) && !request()->exists('tag_name') ? '' : "hide-element" }} ">
+                            {{ Form::open(['url' => '/bluelines/cats', 'name' => 'category' ]) }}
                             {{ Form::dashFields('ShawnSandy\Bluelines\App\BluelinesCategory') }}
                             <p class="form-group text-right">
                                 <button type="submit" class="btn btn-primary">Save</button>
@@ -63,7 +63,7 @@
                         <h3>Content Tags
                             <button class="btn btn-sm btn-default tag-button">New Tag</button>
                         </h3>
-                        <div class="bluform {{ count($errors) ? '' : "hide-element" }}">
+                        <div class="bluform {{ count($errors) && request()->exists('tag_name') ? '' : "hide-element" }}">
                             {{ Form::createForm('ShawnSandy\Bluelines\App\BluelinesTag', '/bluelines/tags') }}
                         </div>
 
@@ -108,8 +108,6 @@
         });
 
     });
-
-
 
     $("form").each(function() {
        var forms = $(this);

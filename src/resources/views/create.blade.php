@@ -6,10 +6,12 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
+                <h3>Create a New Post</h3>
+                <hr>
 
                 {{ Form::open(["url" => "/bluelines"]) }}
 
-                {{ Form::dashFields('ShawnSandy\Bluelines\App\Blueline') }}
+                @include("bluelines::partials.forms.post")
 
                 <p class="form-group text-right">
                     <button class="btn btn-primary btn-lg" type="submit">Save Content</button>
