@@ -24,14 +24,16 @@
                         </tr>
                         </thead>
 
-                        <tr>
-                            <td>5</td>
-                            <td>Name</td>
-                            <td>Created</td>
-                            <td class="text-right">
-                                <div class="btn btn-primary btn-sm">View / Edit</div>
-                            </td>
-                        </tr>
+                        @foreach($content as $post)
+                            <tr>
+                                <td>{{ $post->id }}</td>
+                                <td>{{ $post->title }}</td>
+                                <td>{{ $post->created_at }}</td>
+                                <td class="text-right">
+                                    <a href="/bluelines/posts/{{ $post->id }}/edit" class="btn btn-primary btn-sm">View / Edit</a>
+                                </td>
+                            </tr>
+                        @endforeach
 
                     </table>
                 @endif
@@ -83,6 +85,7 @@
     .hide-element {
         display: none;
     }
+
     .validate-error {
         border-color: red;
         color: red;
@@ -109,15 +112,15 @@
 
     });
 
-    $("form").each(function() {
-       var forms = $(this);
-       console.log(forms.length);
-       $(forms).find("input,textarea,select").filter("[required]").each(function(){
-          var rfields = $(this);
-          console.log('tfileds' + rfields.length);
-       });
+    $("form").each(function () {
+        var forms = $(this);
+        console.log(forms.length);
+        $(forms).find("input,textarea,select").filter("[required]").each(function () {
+            var rfields = $(this);
+            console.log('tfileds' + rfields.length);
+        });
     });
-    $("input,textarea,select").filter('[required]').each(function(){
+    $("input,textarea,select").filter('[required]').each(function () {
         $(this).addClass("validate-error").val('*');
     });
 

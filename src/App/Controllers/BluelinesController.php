@@ -10,7 +10,11 @@
 
 
     use Illuminate\Routing\Controller;
+    use Illuminate\Support\Facades\URL;
+    use Request;
     use ShawnSandy\Bluelines\App\Blueline;
+    use ShawnSandy\Bluelines\App\BluelinesCategory;
+    use ShawnSandy\Bluelines\App\BluelinesTag;
     use ShawnSandy\Bluelines\App\Request\BluelineRequest;
 
     class BluelinesController extends Controller
@@ -20,9 +24,9 @@
         {
             $content = Blueline::paginate(20);
 
-            $categories;
+            $categories = BluelinesCategory::all();
 
-            $tags;
+            $tags = BluelinesTag::all();
 
             return view("bluelines::index", compact("content", "categories", "tags"));
         }
@@ -49,16 +53,33 @@
         {
         }
 
-        public function edit()
+        public function edit($post_id)
         {
+
+            $post = Blueline::find($post_id);
+
+            return view("bluelines::edit", compact("post"));
+
         }
 
-        public function update()
+        public function update($post_id)
         {
+
+            if ($post = Blueline::updateOrCreate(["id" => $post_id], request::input())):
+                return back()->with("success", "Your post has been updates");
+            endif;
+
+            return back()->with("error", "Sorry your post was not updates");
+
         }
 
-        public function destroy()
+        public function destroy($post_id)
         {
+            if ($post = Blueline::destroy($post_id)):
+                back()->with("success", "Your post has beend deleted");
+            endif;
+
+            return back()->with("error", "Sorry you post was not deleted!");
         }
 
 

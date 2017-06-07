@@ -7,6 +7,6 @@
  */
 
 
-Route::resource('/', '\ShawnSandy\Bluelines\App\Controllers\BluelinesController');
+Route::resource('/posts', '\ShawnSandy\Bluelines\App\Controllers\BluelinesController');
 Route::resource('/cats', '\ShawnSandy\Bluelines\App\Controllers\CategoryController');
 Route::resource('/tags', '\ShawnSandy\Bluelines\App\Controllers\TagController');

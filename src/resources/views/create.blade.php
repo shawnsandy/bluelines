@@ -9,12 +9,13 @@
                 <h3>Create a New Post</h3>
                 <hr>
 
-                {{ Form::open(["url" => "/bluelines"]) }}
+                {{ Form::open(["url" => "/posts/bluelines"]) }}
 
                 @include("bluelines::partials.forms.post")
 
                 <p class="form-group text-right">
                     <button class="btn btn-primary btn-lg" type="submit">Save Content</button>
+                    <button class="btn btn-default btn-lg" type="reset">Clear</button>
                 </p>
 
                 {{ Form::close() }}
@@ -38,3 +39,9 @@
 
 
 @endsection
+@push("scripts")
+<script src="//cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('body');
+</script>
+@endpush
