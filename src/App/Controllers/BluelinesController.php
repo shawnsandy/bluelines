@@ -49,10 +49,6 @@
             back()->with('error', "Sorry you post was not save please try again");
         }
 
-        public function show()
-        {
-        }
-
         public function edit($post_id)
         {
 

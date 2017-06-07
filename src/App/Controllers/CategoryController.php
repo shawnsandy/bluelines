@@ -18,11 +18,14 @@
 
         public function store(CategoryRequest $request) {
 
-
           if(BluelinesCategory::create(request(['name', 'description', 'image'])))
             return  back()->with('success', "  Category created");
 
          return back()->with("error", "Ooops we failed to save category");
+
+        }
+
+        public function edit() {
 
         }
 

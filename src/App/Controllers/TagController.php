@@ -37,10 +37,6 @@
 
         }
 
-        public function update(Request $request) {
-
-        }
-
         public function destroy($id) {
 
         }
