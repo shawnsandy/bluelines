@@ -27,6 +27,7 @@
                 "title" => "required|max:200",
                 "slug" => "max:200",
                 "body" => "required|min:50",
+                "featured_image" => "image",
                 "category" => "sometimes|required"
             ];
 
