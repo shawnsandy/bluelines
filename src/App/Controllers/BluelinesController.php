@@ -38,13 +38,13 @@
 
         public function store(BluelineRequest $request)
         {
-            // dd($request->all());
+
             $data = $request->all();
             $data['author_id'] = 1;
 
             if($request->hasFile("featured_image") && $request->file("featured_image")->isValid()) {
 
-                $data['featured_image'] = $request->featured_image->move('img', 'images');
+                $data['featured_image'] = $request->file('featured_image')->store('img', 'public');
 
             }
 
@@ -69,8 +69,17 @@
 
         public function update(BluelineRequest $request, $post_id)
         {
+            //dd($request->all());
 
-            if ($post = Blueline::updateOrCreate(["id" => $post_id], $request->input())):
+            $data = $request->input();
+
+            if($request->hasFile("featured_image") && $request->file("featured_image")->isValid()) {
+
+                $data['featured_image'] = $request->file('featured_image')->store('img', 'public');
+
+            }
+
+            if ($post = Blueline::updateOrCreate(["id" => $post_id], $data)):
                 return back()->with("success", "Your post has been updated!");
             endif;
 
