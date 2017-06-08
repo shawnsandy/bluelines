@@ -9,12 +9,12 @@
                 <h3>Edit Post</h3>
                 <hr>
 
-                {{ Form::model($post, ["url" => "/bluelines/posts/{$post->id }", "method" => "put"]) }}
+                {{ Form::model($post, ["url" => "/bluelines/posts/{$post->id }", "method" => "put", "files" => true]) }}
 
                 @include("bluelines::partials.forms.post")
 
                 <p class="form-group text-right">
-                    <button class="btn btn-primary btn-lg" type="submit">Save Post</button>
+                    <button class="btn btn-primary btn-lg" type="submit">Update Post</button>
                     <button class="btn btn-default btn-lg" type="reset">Clear</button>
                 </p>
 
@@ -35,7 +35,7 @@
                     </div>
                     <hr>
                     <p>
-                        <img src="{{ $post->featured_image }}" alt="">
+                        <img src="{{ Storage::url($post->featured_image)}}" alt="" class="img-responsive">
                     </p>
                    <p>
                        {!! $post->excerpt !!}
