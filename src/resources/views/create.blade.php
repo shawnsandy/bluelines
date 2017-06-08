@@ -9,12 +9,12 @@
                 <h3>Create a New Post</h3>
                 <hr>
 
-                {{ Form::open(["url" => "/posts/bluelines"]) }}
+                {{ Form::open(["url" => "/bluelines/posts", "files" => true]) }}
 
                 @include("bluelines::partials.forms.post")
 
                 <p class="form-group text-right">
-                    <button class="btn btn-primary btn-lg" type="submit">Save Content</button>
+                    <button class="btn btn-primary btn-lg" type="submit">Create Post</button>
                     <button class="btn btn-default btn-lg" type="reset">Clear</button>
                 </p>
 
