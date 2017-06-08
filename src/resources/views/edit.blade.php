@@ -5,7 +5,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <h3>Edit Post</h3>
                 <hr>
 
@@ -22,15 +22,29 @@
 
             </div>
 
-            <div class="col-md-4">
-                <h3>Content Options</h3>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut distinctio nesciunt numquam sapiente
-                            voluptatem? Adipisci, commodi consectetur delectus deserunt dolore eos error esse illo illum iure
-                            ullam vel, voluptatem voluptatum.</p>
+            <div class="col-md-5">
+
+
+                <aside class="post-preview">
+
+                    <h2>
+                        {{ $post->title }}
+                    </h2>
+                    <div class="meta">
+                        Posted : {{ $post->created_at->diffForHumans() }}
                     </div>
-                </div>
+                    <hr>
+                    <p>
+                        <img src="{{ $post->featured_image }}" alt="">
+                    </p>
+                   <p>
+                       {!! $post->excerpt !!}
+                   </p>
+                    <hr>
+                    <p class="small text-uppercase text-right text-muted">Post Preview</p>
+
+
+                </aside>
             </div>
 
 

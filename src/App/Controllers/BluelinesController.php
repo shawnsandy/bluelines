@@ -10,8 +10,6 @@
 
 
     use Illuminate\Routing\Controller;
-    use Illuminate\Support\Facades\URL;
-    use Request;
     use ShawnSandy\Bluelines\App\Blueline;
     use ShawnSandy\Bluelines\App\BluelinesCategory;
     use ShawnSandy\Bluelines\App\BluelinesTag;
@@ -29,6 +27,7 @@
             $tags = BluelinesTag::all();
 
             return view("bluelines::index", compact("content", "categories", "tags"));
+
         }
 
         public function create()
@@ -42,11 +41,21 @@
             // dd($request->all());
             $data = $request->all();
             $data['author_id'] = 1;
-//            dd($data);
-            if ($post = Blueline::create($data)) {
-                back()->with('success', "Your post {$post->title} was  created");
+
+            if($request->hasFile("featured_image") && $request->file("featured_image")->isValid()) {
+
+                $data['featured_image'] = $request->featured_image->move('img', 'images');
+
             }
-            back()->with('error', "Sorry you post was not save please try again");
+
+            if ($post = Blueline::create($data)) {
+
+                back()->with('success', "Your post {$post->title} was  created");
+
+            }
+
+            back()->with('error', "Sorry your post was not saved, please try again.");
+
         }
 
         public function edit($post_id)
@@ -58,14 +67,14 @@
 
         }
 
-        public function update($post_id)
+        public function update(BluelineRequest $request, $post_id)
         {
 
-            if ($post = Blueline::updateOrCreate(["id" => $post_id], request::input())):
-                return back()->with("success", "Your post has been updates");
+            if ($post = Blueline::updateOrCreate(["id" => $post_id], $request->input())):
+                return back()->with("success", "Your post has been updated!");
             endif;
 
-            return back()->with("error", "Sorry your post was not updates");
+            return back()->with("error", "Sorry your post was not updated");
 
         }
 
