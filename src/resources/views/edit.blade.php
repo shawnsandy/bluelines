@@ -37,9 +37,9 @@
                     <p>
                         <img src="{{ Storage::url($post->featured_image)}}" alt="" class="img-responsive">
                     </p>
-                   <p>
-                       {!! $post->excerpt !!}
-                   </p>
+                    <p>
+                        {!! $post->excerpt !!}
+                    </p>
                     <hr>
                     <p class="small text-uppercase text-right text-muted">Post Preview</p>
 
