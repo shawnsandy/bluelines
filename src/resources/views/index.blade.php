@@ -42,34 +42,12 @@
 
             <div class="col-md-4">
 
-                <div class="widget-forms panel panel-default">
-                    <div class="panel-body">
-                        <h3>Content Categories
-                            <button class="btn btn-sm btn-default tag-button">New Category</button>
-                        </h3>
-                        <div class="bluform {{ count($errors) && !request()->exists('tag_name') ? '' : "hide-element" }} ">
-                            {{ Form::open(['url' => '/bluelines/cats', 'name' => 'category' ]) }}
-                            {{ Form::dashFields('ShawnSandy\Bluelines\App\BluelinesCategory') }}
-                            <p class="form-group text-right">
-                                <button type="submit" class="btn btn-primary">Save</button>
-                                <button type="reset" class="btn btn-default">Reset</button>
-                            </p>
-                            {{ Form::close() }}
-                        </div>
-
-                    </div>
+                <div class="widget-forms">
+                    {{ Html::blueCategories($categories) }}
                 </div>
 
-                <div class="widget-forms panel panel-default">
-                    <div class="panel-body">
-                        <h3>Content Tags
-                            <button class="btn btn-sm btn-default tag-button">New Tag</button>
-                        </h3>
-                        <div class="bluform {{ count($errors) && request()->exists('tag_name') ? '' : "hide-element" }}">
-                            {{ Form::createForm('ShawnSandy\Bluelines\App\BluelinesTag', '/bluelines/tags') }}
-                        </div>
-
-                    </div>
+                <div class="widget-forms">
+                   {{ Html::blueTags($tags) }}
                 </div>
 
             </div>
@@ -119,9 +97,16 @@
             var rfields = $(this);
             console.log('tfileds' + rfields.length);
         });
-    });
-    $("input,textarea,select").filter('[required]').each(function () {
-        $(this).addClass("validate-error").val('*');
+        $(forms).submit(function(e){
+
+            $("input,textarea,select").filter('[required]').each(function () {
+                if($(this.val() === "")) {
+                    e.preventDefault()
+                    $(this).addClass("validate-error").val('*') ;
+                }
+
+            });
+        })
     });
 
 </script>

@@ -26,7 +26,7 @@
 
             return [
                 "name" => "required|min:5",
-                "description" => "alpha_num",
+                "description" => "string",
                 "image" => "image"
             ];
 

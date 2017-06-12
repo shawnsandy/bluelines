@@ -32,7 +32,6 @@
 
         public function create()
         {
-
             return view("bluelines::create");
         }
 

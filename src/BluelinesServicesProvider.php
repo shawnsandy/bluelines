@@ -60,6 +60,8 @@ class BluelinesServicesProvider extends ServiceProvider
 
         $this->loadMigrationsFrom(__DIR__ . '/migrations');
 
+        include_once __DIR__. "/components.php";
+
     }
 
     /**

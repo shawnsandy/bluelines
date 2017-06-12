@@ -35,7 +35,7 @@
                     </div>
                     <hr>
                     <p>
-                        <img src="{{ Storage::url($post->featured_image)}}" alt="" class="img-responsive">
+                        <img src="{{ Html::postImg($post->featured_image, "?w=700") }}" alt="" class="img-responsive">
                     </p>
                     <p>
                         {!! $post->excerpt !!}
@@ -53,10 +53,4 @@
 
 
 @endsection
-
-@push("scripts")
-<script src="//cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace('body');
-</script>
-@endpush
+{{ Html::ckeditor() }}
