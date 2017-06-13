@@ -18,7 +18,13 @@
 
         public function store(CategoryRequest $request) {
 
-          if(BluelinesCategory::create(request(['name', 'description', 'image'])))
+            $data = $request->all();
+
+           if($request->hasFile("image") && $request->file("image")->isValid()) {
+               $data["image"] = $request->file('image')->store('img', 'public');
+           }
+
+          if(BluelinesCategory::create($data))
             return  back()->with('success', "  Category created");
 
          return back()->with("error", "Ooops we failed to save category");
