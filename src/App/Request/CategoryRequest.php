@@ -26,7 +26,7 @@
 
             return [
                 "name" => "required|min:5",
-                "description" => "string|max200",
+                "description" => "string|max:200",
                 "image" => "image"
             ];
 

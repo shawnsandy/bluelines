@@ -33,7 +33,12 @@
 
         }
 
-        public function destroy() {
+        public function destroy($cat_id) {
+
+            if(BluelinesCategory::destroy($cat_id))
+              return back()->with("success", "Your Category has been deleted.");
+
+            return back()->with("error", "Sorry we failed to delete this category");
 
         }
 

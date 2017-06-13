@@ -109,6 +109,22 @@
         })
     });
 
+    $(".delete-btn").each(function() {
+       var el = $(this);
+
+       $(el).click(function(e){
+           var elValue = el.html();
+           if(elValue === "<i class=\"fa fa-times\"></i>") {
+               e.preventDefault();
+               el.html("<i class=\"fa fa-check\"></i>");
+               setTimeout(function() {
+                   el.html("<i class=\"fa fa-times\"></i>");
+               }, 4000);
+           }
+       });
+
+    });
+
 </script>
 
 @endpush

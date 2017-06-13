@@ -11,7 +11,8 @@
 @if(count($tags))
     <li class="list-group-item">
         @foreach($tags as $tag)
-            <a href="/" class="btn btn-link">{{ $tag->tag_name }}</a>
+            {{ $tag->tag_name }}
+            <a href="/bluelines/tags/rm/{{ $tag->id }}" class="delete-btn"><i class="fa fa-times"></i></a>
         @endforeach
     </li>
 @endif

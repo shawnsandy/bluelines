@@ -39,6 +39,11 @@
 
         public function destroy($id) {
 
+            if(BluelinesTag::destroy($id))
+                return back()->with("success", "Your tag has been deleted");
+
+            return back()->with("error", "Sorry failed to delete tag");
+
         }
 
     }
