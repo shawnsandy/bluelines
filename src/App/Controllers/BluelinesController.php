@@ -53,6 +53,8 @@
 
             }
 
+
+
             back()->with('error', "Sorry your post was not saved, please try again.");
 
         }

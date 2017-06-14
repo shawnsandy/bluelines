@@ -11,4 +11,4 @@ Route::resource('/posts', '\ShawnSandy\Bluelines\App\Controllers\BluelinesContro
 Route::resource('/cats', '\ShawnSandy\Bluelines\App\Controllers\CategoryController', ['except' => ['index', 'show']]);
 Route::resource('/tags', '\ShawnSandy\Bluelines\App\Controllers\TagController', ['only' => ['store', 'destroy']]);
 
-Route::get('/tags/rm/{post_id}', "\ShawnSandy\Bluelines\App\Controllers\TagController@destroy");
+Route::get('/tags/delete/{post_id}', "\ShawnSandy\Bluelines\App\Controllers\TagController@destroy");
