@@ -3,6 +3,8 @@
 namespace ShawnSandy\Bluelines;
 
 use Illuminate\Support\ServiceProvider;
+use ShawnSandy\Bluelines\App\BluelinesCategory;
+use ShawnSandy\Bluelines\App\BluelinesTag;
 
 /**
  * Class Provider
@@ -61,6 +63,16 @@ class BluelinesServicesProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/migrations');
 
         include_once __DIR__. "/components.php";
+
+        view()->composer(["bluelines::partials.forms.post"], function($view) {
+
+            $categories_list = BluelinesCategory::orderBy("name", "ASC")->pluck("name", "id");
+
+            $tags_list = BluelinesTag::orderBy("tag_name", "ASC")->pluck("tag_name", "id");
+
+            $view->with(compact("categories_list", "tags_list"));
+
+        });
 
     }
 
