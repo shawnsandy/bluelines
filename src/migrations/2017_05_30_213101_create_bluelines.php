@@ -80,7 +80,7 @@ class CreateBluelines extends Migration
             $table->timestamps();
         });
 
-        Schema::create("blueline_bluelines_tags", function(Blueprint $table){
+        Schema::create("blueline_bluelines_tag", function(Blueprint $table){
             $table->integer('blueline_id');
             $table->integer('bluelines_tag_id');
             $table->primary(['blueline_id', 'bluelines_tag_id']);
