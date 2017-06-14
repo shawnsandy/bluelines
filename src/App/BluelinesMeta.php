@@ -14,4 +14,10 @@
     class BluelinesMeta extends Model
     {
 
+        protected $table = "bluelines_meta";
+
+        public function content() {
+            return $this->belongsTo(Blueline::class);
+        }
+
     }

@@ -16,4 +16,8 @@
 
         protected $fillable = ["name", "description", "image"];
 
+        public function content() {
+            return $this->belongsToMany(Blueline::class);
+        }
+
     }

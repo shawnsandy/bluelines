@@ -12,7 +12,7 @@
     <li class="list-group-item">
         @foreach($tags as $tag)
             {{ $tag->tag_name }}
-            <a href="/bluelines/tags/rm/{{ $tag->id }}" class="delete-btn"><i class="fa fa-times"></i></a>
+            <a href="/bluelines/tags/delete/{{ $tag->id }}" class="delete-btn"><i class="fa fa-times"></i></a>
         @endforeach
     </li>
 @endif

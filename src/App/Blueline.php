@@ -13,8 +13,26 @@
 
     class Blueline extends Model
     {
+
         protected $fillable = [
             "title", "slug", "status", "body",  "featured", "excerpt", "featured_image", "author_id"
             ];
+
+        public function categories() {
+            return $this->belongsToMany(BluelinesCategory::class);
+        }
+
+        public function tags() {
+            return $this->belongsToMany(BluelinesTag::class);
+        }
+
+        public function files() {
+            return $this->belongsToMany(BluelinesFile::class);
+        }
+
+        public function meta() {
+            return $this->hasMany(BluelinesMeta::class);
+        }
+
 
     }

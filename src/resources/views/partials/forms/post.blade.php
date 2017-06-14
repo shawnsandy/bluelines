@@ -14,12 +14,6 @@
     <div class="col-md-2">
         {{ $fields["featured"] }}
     </div>
-    <div class="col-md-12">
-        {{ Form::dashSelect("category", 'Category',  ["data-table" => "category"]) }}
-    </div>
-    <div class="col-md-12">
-        {{ Form::dashSelect("tags", 'Tags',  ["data-table" => "category"]) }}
-    </div>
     <div class="col-md-6"></div>
     <div class="col-md-12">
         {{ $fields["body"] }}
