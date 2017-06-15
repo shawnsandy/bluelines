@@ -83,8 +83,8 @@ class BluelinesController extends Controller
 
         if ($post = Blueline::updateOrCreate(["id" => $post_id], $data)):
 
-            if (request()->has("category"))
-                $post->categories()->sync($request->input("category"));
+            if (request()->has("categories"))
+                $post->categories()->sync($request->input("categories"));
 
             if (request()->has("tags") )
                 $post->tags()->sync(request()->input("tags"));

@@ -35,6 +35,17 @@
 
 </div>
 
+@push("styles")
+<style>
+    .file-input-box {
+        background-color: darkgrey;
+        color: #FFF;
+        padding: ;
+    }
+</style>
+@endpush
+
+
 {{ Html::select2Js() }}
 @push("scripts")
 <script>
