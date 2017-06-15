@@ -70,7 +70,7 @@
 
         public function update(BluelineRequest $request, $post_id)
         {
-            //dd($request->all());
+            dd($request->all());
 
             $data = $request->input();
 
