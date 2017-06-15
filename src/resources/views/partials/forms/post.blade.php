@@ -15,12 +15,12 @@
         {{ $fields["featured"] }}
     </div>
     <div class="col-md-12">
-        @php config(["forms.category.options.category[]" => $categories_list]) @endphp
-        {{ Form::dashSelect("category[]", 'Category',  ["data-table" => "category", "multiple" => "multiple" ]) }}
+        @php config(["forms.category.options.categories[]" => $categories_list]) @endphp
+        {{ Form::dashSelect("categories[]", 'Category',  ["data-table" => "category", "multiple" => "multiple" ]) }}
     </div>
     <div class="col-md-12">
-        @php config(["forms.tags.options.tags" => $tags_list]) @endphp
-        {{ Form::dashSelect("tags", 'Tags',  ["data-table" => "tags"]) }}
+        @php config(["forms.tags.options.tags[]" => $tags_list]) @endphp
+        {{ Form::dashSelect("tags[]", 'Tags',  ["data-table" => "tags", "multiple" => "multiple"]) }}
     </div>
     <div class="col-md-6"></div>
     <div class="col-md-12">
@@ -39,5 +39,6 @@
 @push("scripts")
 <script>
 $(".category").select2();
+$(".tags").select2();
 </script>
 @endpush
