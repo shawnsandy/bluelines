@@ -1,4 +1,9 @@
-@php $fields = DashForms::buildModelFields('ShawnSandy\Bluelines\App\Blueline') @endphp
+@php
+    $fields = DashForms::buildModelFields('ShawnSandy\Bluelines\App\Blueline') ;
+    // category and tags select config options
+    config(["forms.category.options.categories[]" => $categories_list]);
+    config(["forms.tags.options.tags[]" => $tags_list]);
+@endphp
 
 <div class="row">
 
@@ -15,11 +20,9 @@
         {{ $fields["featured"] }}
     </div>
     <div class="col-md-12">
-        @php config(["forms.category.options.categories[]" => $categories_list]) @endphp
         {{ Form::dashSelect("categories[]", 'Category',  ["data-table" => "category", "multiple" => "multiple" ]) }}
     </div>
     <div class="col-md-12">
-        @php config(["forms.tags.options.tags[]" => $tags_list]) @endphp
         {{ Form::dashSelect("tags[]", 'Tags',  ["data-table" => "tags", "multiple" => "multiple"]) }}
     </div>
     <div class="col-md-6"></div>
@@ -40,7 +43,7 @@
     .file-input-box {
         background-color: darkgrey;
         color: #FFF;
-        padding: ;
+        padding:;
     }
 </style>
 @endpush
@@ -49,7 +52,7 @@
 {{ Html::select2Js() }}
 @push("scripts")
 <script>
-$(".category").select2();
-$(".tags").select2();
+    $(".category").select2();
+    $(".tags").select2();
 </script>
 @endpush
