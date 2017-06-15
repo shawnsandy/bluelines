@@ -70,7 +70,8 @@
 
         public function update(BluelineRequest $request, $post_id)
         {
-            dd($request->all());
+
+//            dd($request->all());
 
             $data = $request->input();
 
@@ -78,10 +79,17 @@
 
                 $data['featured_image'] = $request->file('featured_image')->store('img', 'public');
 
+
+
             }
 
             if ($post = Blueline::updateOrCreate(["id" => $post_id], $data)):
+
+                if($request->has("category") && count($request->input("category")))
+                    $post->categories()->sync($request->input("category"));
+
                 return back()->with("success", "Your post has been updated!");
+
             endif;
 
             return back()->with("error", "Sorry your post was not updated");
