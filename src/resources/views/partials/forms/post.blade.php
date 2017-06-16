@@ -52,7 +52,9 @@
 {{ Html::select2Js() }}
 @push("scripts")
 <script>
-    $(".category").select2();
+    $(".category").select2({
+        maximumInputLength: 20
+    });
     $(".tags").select2();
 </script>
 @endpush
