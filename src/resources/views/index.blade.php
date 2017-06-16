@@ -30,7 +30,8 @@
                                 <td>{{ $post->title }}</td>
                                 <td>{{ $post->created_at }}</td>
                                 <td class="text-right">
-                                    <a href="/bluelines/posts/{{ $post->id }}/edit" class="btn btn-primary btn-sm">View / Edit</a>
+                                    <a href="/bluelines/posts/{{ $post->id }}/edit" class="btn btn-primary btn-sm">View
+                                        / Edit</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -43,11 +44,11 @@
             <div class="col-md-4">
 
                 <div class="widget-forms">
-                    {{ Html::blueCategories($categories) }}
+                    {{ Html::blueCategories($categories_list) }}
                 </div>
 
                 <div class="widget-forms">
-                   {{ Html::blueTags($tags) }}
+                    {{ Html::blueTags($tags_list) }}
                 </div>
 
             </div>
@@ -97,31 +98,31 @@
             var rfields = $(this);
             console.log('tfileds' + rfields.length);
         });
-        $(forms).submit(function(e){
+        $(forms).submit(function (e) {
 
             $("input,textarea,select").filter('[required]').each(function () {
-                if($(this.val() === "")) {
+                if ($(this.val() === "")) {
                     e.preventDefault()
-                    $(this).addClass("validate-error").val('*') ;
+                    $(this).addClass("validate-error").val('*');
                 }
 
             });
         })
     });
 
-    $(".delete-btn").each(function() {
-       var el = $(this);
+    $(".delete-btn").each(function () {
+        var el = $(this);
 
-       $(el).click(function(e){
-           var elValue = el.html();
-           if(elValue === "<i class=\"fa fa-times\"></i>") {
-               e.preventDefault();
-               el.html("<i class=\"fa fa-check\"></i>");
-               setTimeout(function() {
-                   el.html("<i class=\"fa fa-times\"></i>");
-               }, 4000);
-           }
-       });
+        $(el).click(function (e) {
+            var elValue = el.html();
+            if (elValue === "<i class=\"fa fa-times\"></i>") {
+                e.preventDefault();
+                el.html("<i class=\"fa fa-check\"></i>");
+                setTimeout(function () {
+                    el.html("<i class=\"fa fa-times\"></i>");
+                }, 4000);
+            }
+        });
 
     });
 

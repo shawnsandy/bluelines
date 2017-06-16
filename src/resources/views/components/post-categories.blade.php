@@ -14,8 +14,8 @@
         </div>
     </li>
     @if(count($categories))
-        @foreach($categories as $category)
-            <li class="list-group-item"> {{ $category->name }} </li>
+        @foreach($categories as $category => $name)
+            <li class="list-group-item"> {{ $name }} </li>
         @endforeach
     @endif
 </ul>
