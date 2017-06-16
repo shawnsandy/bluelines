@@ -12,10 +12,10 @@
     </div>
 
     <div class="clearfix">
-        <div class="col-md-3">
+        <div class="col-md-6">
             {{ $fields["status"] }}
         </div>
-        <div class="col-md-2">
+        <div class="col-md-6">
             {{ $fields["featured"] }}
         </div>
 
@@ -29,12 +29,13 @@
         {{ Form::dashSelect("tags[]", 'Tags',  ["data-table" => "tags", "multiple" => "multiple"]) }}
     </div>
 
+    <div class="col-md-12">
+        {{ $fields["featured_image"] }}
+    </div>
+
     <div class="col-md-6"></div>
     <div class="col-md-12">
         {{ $fields["body"] }}
-    </div>
-    <div class="col-md-12">
-        {{ $fields["featured_image"] }}
     </div>
     <div class="col-md-12">
         {{ $fields["excerpt"] }}
