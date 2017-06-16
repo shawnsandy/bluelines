@@ -19,14 +19,16 @@
             {{ $fields["featured"] }}
         </div>
 
-        <div class="col-md-7">
-            {{ Form::dashSelect("tags[]", 'Tags',  ["data-table" => "tags", "multiple" => "multiple"]) }}
-        </div>
     </div>
 
     <div class="col-md-12">
         {{ Form::dashSelect("categories[]", 'Category',  ["data-table" => "category", "multiple" => "multiple" ]) }}
     </div>
+
+    <div class="col-md-12">
+        {{ Form::dashSelect("tags[]", 'Tags',  ["data-table" => "tags", "multiple" => "multiple"]) }}
+    </div>
+
     <div class="col-md-6"></div>
     <div class="col-md-12">
         {{ $fields["body"] }}

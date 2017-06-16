@@ -5,9 +5,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-7">
-                <h3>Edit Post</h3>
-                <hr>
+            <div class="col-md-6">
 
                 {{ Form::model($post, ["url" => "/bluelines/posts/{$post->id }", "method" => "put", "files" => true]) }}
 
@@ -22,21 +20,23 @@
 
             </div>
 
-            <div class="col-md-5">
+            <div class="col-md-6">
 
 
                 <aside class="post-preview">
 
+                    <p>
+                        <img src="{{ Html::postImg($post->featured_image, "?w=700") }}" alt="" class="img-responsive">
+                    </p>
+
                     <h2>
                         {{ $post->title }}
                     </h2>
+
                     <div class="meta">
                         Posted : {{ $post->created_at->diffForHumans() }}
                     </div>
                     <hr>
-                    <p>
-                        <img src="{{ Html::postImg($post->featured_image, "?w=700") }}" alt="" class="img-responsive">
-                    </p>
                     <p>
                         {!! $post->excerpt !!}
                     </p>

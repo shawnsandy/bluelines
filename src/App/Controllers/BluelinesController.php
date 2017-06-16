@@ -9,10 +9,9 @@
 namespace ShawnSandy\Bluelines\App\Controllers;
 
 
+use Carbon\Carbon;
 use Illuminate\Routing\Controller;
 use ShawnSandy\Bluelines\App\Blueline;
-use ShawnSandy\Bluelines\App\BluelinesCategory;
-use ShawnSandy\Bluelines\App\BluelinesTag;
 use ShawnSandy\Bluelines\App\Request\BluelineRequest;
 
 class BluelinesController extends Controller
@@ -45,11 +44,7 @@ class BluelinesController extends Controller
 
         if ($post = Blueline::create($data)) {
 
-            if (request()->has("categories"))
-                $post->categories()->sync($request->input("categories"));
-
-            if (request()->has("tags"))
-                $post->tags()->sync(request()->input("tags"));
+            $this->sync($post);
 
            return redirect("/bluelines/posts/{$post->id}/edit")->with('success', "Your post {$post->title} was  created");
 
@@ -60,7 +55,6 @@ class BluelinesController extends Controller
 
     }
 
-
     public function edit($post_id)
     {
 
@@ -69,6 +63,7 @@ class BluelinesController extends Controller
         return view("bluelines::edit", compact("post"));
 
     }
+
 
     public function update(BluelineRequest $request, $post_id)
     {
@@ -86,11 +81,7 @@ class BluelinesController extends Controller
 
         if ($post = Blueline::updateOrCreate(["id" => $post_id], $data)):
 
-            if (request()->has("categories"))
-                $post->categories()->sync($request->input("categories"));
-
-            if (request()->has("tags") )
-                $post->tags()->sync(request()->input("tags"));
+            $this->sync($post);
 
             return back()->with("success", "Your post has been updated!");
 
@@ -107,6 +98,23 @@ class BluelinesController extends Controller
         endif;
 
         return back()->with("error", "Sorry you post was not deleted!");
+    }
+
+    /**
+     * @param $post
+     */
+    private function sync($post): void
+    {
+        if (!request()->has("slug")):
+            $slug = str_slug($post->title . "-" . $post->created_at->toDateString());
+            Blueline::updateOrCreate(["id" => $post->id], ["slug" => $slug]);
+        endif;
+
+        if (request()->has("categories"))
+            $post->categories()->sync(request()->input("categories"));
+
+        if (request()->has("tags"))
+            $post->tags()->sync(request()->input("tags"));
     }
 
 
