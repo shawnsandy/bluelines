@@ -13,7 +13,7 @@
     use ShawnSandy\Bluelines\App\BluelinesCategory;
     use ShawnSandy\Bluelines\App\BluelinesTag;
 
-    class Content
+    class Contents
     {
 
         public function __construct()
@@ -21,7 +21,7 @@
         }
 
 
-        public function category($category_id = null)
+        public function categories($category_id = null)
         {
 
             if (is_null($category_id))
@@ -33,7 +33,7 @@
 
         }
 
-        public function tag($tags_id = null)
+        public function tags($tags_id = null)
         {
 
             if (is_null($tags_id))
