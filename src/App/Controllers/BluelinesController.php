@@ -22,11 +22,7 @@ class BluelinesController extends Controller
     {
         $content = Blueline::paginate(20);
 
-        $categories = BluelinesCategory::all();
-
-        $tags = BluelinesTag::all();
-
-        return view("bluelines::index", compact("content", "categories", "tags"));
+        return view("bluelines::index", compact("content"));
 
     }
 
@@ -61,7 +57,7 @@ class BluelinesController extends Controller
     public function edit($post_id)
     {
 
-        $post = Blueline::find($post_id);
+        $post = Blueline::where("id", $post_id)->with("categories", "tags")->first();
 
         return view("bluelines::edit", compact("post"));
 
