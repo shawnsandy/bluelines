@@ -10,10 +10,10 @@
     <div class="col-md-12">
         {{ $fields['title'] }}
     </div>
-    <div class="col-md-8">
+    <div class="col-md-7">
         {{ $fields["slug"] }}
     </div>
-    <div class="col-md-2">
+    <div class="col-md-3">
         {{ $fields["status"] }}
     </div>
     <div class="col-md-2">
