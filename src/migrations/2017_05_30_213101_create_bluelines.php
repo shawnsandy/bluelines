@@ -23,7 +23,7 @@ class CreateBluelines extends Migration
             $table->text('excerpt')->nullable();
             $table->text('body');
             $table->string('featured_image')->nullable();
-            $table->string('slug')->unique();
+            $table->string('slug')->nullable();
             $table->string('status')->default('DRAFT');
             $table->boolean('featured')->default(0);
             $table->string('type')->default('posts');
