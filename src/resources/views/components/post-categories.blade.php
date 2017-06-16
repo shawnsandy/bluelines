@@ -1,8 +1,8 @@
 <ul class="list-group">
     <li class="list-group-item">
-        <div class="lead">Categories
+        <h4 class="">Categories
             <button class="btn btn-sm btn-default tag-button">New Category</button>
-        </div>
+        </h4>
         <div class="bluform {{ count($errors) && !request()->exists('tag_name') ? '' : "hide-element" }} ">
             {{ Form::open(['url' => '/bluelines/cats', 'name' => 'category', "files" => true ]) }}
             {{ Form::dashFields('ShawnSandy\Bluelines\App\BluelinesCategory') }}
