@@ -29,14 +29,15 @@
         {{ Form::dashSelect("tags[]", 'Tags',  ["data-table" => "tags", "multiple" => "multiple"]) }}
     </div>
 
-    <div class="col-md-12">
-        {{ $fields["featured_image"] }}
-    </div>
-
     <div class="col-md-6"></div>
     <div class="col-md-12">
         {{ $fields["body"] }}
     </div>
+
+    <div class="col-md-6">
+        {{ $fields["featured_image"] }}
+    </div>
+
     <div class="col-md-12">
         {{ $fields["excerpt"] }}
     </div>

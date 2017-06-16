@@ -4,8 +4,9 @@
 
 @section('content')
     <div class="container-fluid">
+
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-9">
 
                 {{ Form::model($post, ["url" => "/bluelines/posts/{$post->id }", "method" => "put", "files" => true]) }}
 
@@ -20,35 +21,23 @@
 
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-3">
 
 
-                <aside class="post-preview">
+                <aside class="panel panel-default post-preview">
 
-                    <p>
-                        <img src="{{ Html::postImg($post->featured_image, "?w=820") }}" alt="" class="img-responsive">
-                    </p>
+                    <div class="panel-body">
+                        <p class="small text-uppercase text-right text-muted">Post Preview</p>
 
-                    <h1>
-                        {{ $post->title }}
-                    </h1>
-
-                    <div class="meta">
-                        Posted : {{ $post->created_at->diffForHumans() }}
+                        @include("bluelines::partials.post-preview")
+                        <hr>
+                        <p class="small text-uppercase text-right text-muted">Post Preview</p>
                     </div>
-                    <hr>
-                    <p>
-                        {!! $post->excerpt !!}
-                    </p>
-                    <hr>
-                    <p class="small text-uppercase text-right text-muted">Post Preview</p>
-
 
                 </aside>
             </div>
-
-
         </div>
+
     </div>
 
 

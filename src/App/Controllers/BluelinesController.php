@@ -105,6 +105,7 @@ class BluelinesController extends Controller
      */
     private function sync($post): void
     {
+
         if (!request()->has("slug")):
             $slug = str_slug($post->title . "-" . $post->created_at->toDateString());
             Blueline::updateOrCreate(["id" => $post->id], ["slug" => $slug]);
@@ -115,6 +116,7 @@ class BluelinesController extends Controller
 
         if (request()->has("tags"))
             $post->tags()->sync(request()->input("tags"));
+
     }
 
 

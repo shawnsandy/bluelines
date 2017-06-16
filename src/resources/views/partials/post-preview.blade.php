@@ -1,5 +1,5 @@
 <p>
-    <img src="{{ Html::postImg($post->featured_image, "?w=820") }}" alt="" class="img-responsive">
+    <img src="{{ Html::postImg($post->featured_image, "?w=300") }}" alt="" class="img-responsive">
 </p>
 
 <h1>
