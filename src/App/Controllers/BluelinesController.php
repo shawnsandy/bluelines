@@ -19,7 +19,7 @@ class BluelinesController extends Controller
 
     public function index()
     {
-        $content = Blueline::paginate(20);
+        $content = Blueline::orderBy("id", "DESC")->paginate(20);
 
         return view("bluelines::index", compact("content"));
 

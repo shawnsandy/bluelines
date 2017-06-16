@@ -5,7 +5,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <h3>Create a New Post</h3>
                 <hr>
 
@@ -22,7 +22,7 @@
 
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <h3>Content Options</h3>
                 <div class="panel panel-default">
                     <div class="panel-body">

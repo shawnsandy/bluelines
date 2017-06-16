@@ -29,9 +29,9 @@
                         <img src="{{ Html::postImg($post->featured_image, "?w=820") }}" alt="" class="img-responsive">
                     </p>
 
-                    <h2>
+                    <h1>
                         {{ $post->title }}
-                    </h2>
+                    </h1>
 
                     <div class="meta">
                         Posted : {{ $post->created_at->diffForHumans() }}

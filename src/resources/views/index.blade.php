@@ -11,15 +11,15 @@
                 @if(count($content) < 0)
                     <p class="alert alert-info text-center">Not content found</p>
                 @else
-                    <table class="table table-striped">
+                    <table class="table">
 
                         <thead>
                         <tr>
-                            <th class="col-md-1">id</th>
+                            <th class="col-md-1">#</th>
                             <th>Name</th>
+                            <th>Status</th>
                             <th class="col-md-2">Created</th>
                             <th class="col-md-1 text-center">Actions</th>
-
                         </tr>
                         </thead>
 
@@ -28,11 +28,11 @@
                             <tr>
                                 <td>{{ $post->id }}</td>
                                 <td>{{ $post->title }}</td>
+                                <td>{{ $post->status }}</td>
                                 <td>{{ $post->created_at }}</td>
                                 <td class="text-center">
-                                    <a href="/bluelines/posts/{{ $post->id }}/edit"
-                                       class="btn btn-sm btn-default">
-                                        View / Edit
+                                    <a href="/bluelines/posts/{{ $post->id }}/edit" class="small">
+                                        <i class="fa fa-search"></i> View/Edit
                                     </a>
                                 </td>
                             </tr>
@@ -73,7 +73,7 @@
         color: red;
     }
     td {
-        font-size: 16px;
+        font-size: 14px;
     }
 </style>
 

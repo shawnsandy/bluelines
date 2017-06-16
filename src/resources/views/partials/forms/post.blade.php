@@ -46,9 +46,9 @@
 @push("styles")
 <style>
     .file-input-box {
-        background-color: darkgrey;
         color: #FFF;
         padding: 10px;
+        border-radius: 20px;
     }
 </style>
 @endpush
