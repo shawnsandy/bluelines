@@ -10,20 +10,22 @@
     <div class="col-md-12">
         {{ $fields['title'] }}
     </div>
-    <div class="col-md-7">
-        {{ $fields["slug"] }}
+
+    <div class="clearfix">
+        <div class="col-md-3">
+            {{ $fields["status"] }}
+        </div>
+        <div class="col-md-2">
+            {{ $fields["featured"] }}
+        </div>
+
+        <div class="col-md-7">
+            {{ Form::dashSelect("tags[]", 'Tags',  ["data-table" => "tags", "multiple" => "multiple"]) }}
+        </div>
     </div>
-    <div class="col-md-3">
-        {{ $fields["status"] }}
-    </div>
-    <div class="col-md-2">
-        {{ $fields["featured"] }}
-    </div>
+
     <div class="col-md-12">
         {{ Form::dashSelect("categories[]", 'Category',  ["data-table" => "category", "multiple" => "multiple" ]) }}
-    </div>
-    <div class="col-md-12">
-        {{ Form::dashSelect("tags[]", 'Tags',  ["data-table" => "tags", "multiple" => "multiple"]) }}
     </div>
     <div class="col-md-6"></div>
     <div class="col-md-12">
@@ -43,7 +45,7 @@
     .file-input-box {
         background-color: darkgrey;
         color: #FFF;
-        padding:;
+        padding: 10px;
     }
 </style>
 @endpush
@@ -53,8 +55,11 @@
 @push("scripts")
 <script>
     $(".category").select2({
-        maximumInputLength: 20
+        maximumSelectionLength: 5
     });
-    $(".tags").select2();
+    $(".tags").select2({
+        maximumSelectionLength: 8,
+        tags: true
+    });
 </script>
 @endpush
