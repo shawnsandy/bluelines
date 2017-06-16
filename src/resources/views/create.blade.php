@@ -14,8 +14,8 @@
                 @include("bluelines::partials.forms.post")
 
                 <p class="form-group text-right">
-                    <button class="btn btn-primary btn-lg" type="submit">Create Post</button>
-                    <button class="btn btn-default btn-lg" type="reset">Clear</button>
+                    <button class="btn btn-primary" type="submit">Create Post</button>
+                    <button class="btn btn-default" type="reset">Clear</button>
                 </p>
 
                 {{ Form::close() }}

@@ -5,43 +5,46 @@
 @section('content')
     <div class="container-fluid">
 
-        <hr>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-9">
 
                 @if(count($content) < 0)
                     <p class="alert alert-info text-center">Not content found</p>
                 @else
-                    <table class="table">
+                    <table class="table table-striped">
 
                         <thead>
                         <tr>
                             <th class="col-md-1">id</th>
                             <th>Name</th>
                             <th class="col-md-2">Created</th>
-                            <th class="col-md-1 text-right">Action</th>
+                            <th class="col-md-1 text-center">Actions</th>
 
                         </tr>
                         </thead>
 
+                        <tbody>
                         @foreach($content as $post)
                             <tr>
                                 <td>{{ $post->id }}</td>
                                 <td>{{ $post->title }}</td>
                                 <td>{{ $post->created_at }}</td>
-                                <td class="text-right">
-                                    <a href="/bluelines/posts/{{ $post->id }}/edit" class="btn btn-primary btn-sm">View
-                                        / Edit</a>
+                                <td class="text-center">
+                                    <a href="/bluelines/posts/{{ $post->id }}/edit"
+                                       class="btn btn-sm btn-default">
+                                        View / Edit
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
+                        </tbody>
 
                     </table>
                 @endif
 
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
 
                 <div class="widget-forms">
                     {{ Html::blueCategories($categories_list) }}
@@ -68,6 +71,9 @@
     .validate-error {
         border-color: red;
         color: red;
+    }
+    td {
+        font-size: 16px;
     }
 </style>
 
@@ -102,7 +108,7 @@
 
             $("input,textarea,select").filter('[required]').each(function () {
                 if ($(this.val() === "")) {
-                    e.preventDefault()
+                    e.preventDefault();
                     $(this).addClass("validate-error").val('*');
                 }
 
