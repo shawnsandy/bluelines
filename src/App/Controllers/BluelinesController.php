@@ -45,14 +45,21 @@ class BluelinesController extends Controller
 
         if ($post = Blueline::create($data)) {
 
-            back()->with('success', "Your post {$post->title} was  created");
+            if (request()->has("categories"))
+                $post->categories()->sync($request->input("categories"));
+
+            if (request()->has("tags"))
+                $post->tags()->sync(request()->input("tags"));
+
+           return redirect("/bluelines/posts/{$post->id}/edit")->with('success', "Your post {$post->title} was  created");
 
         }
 
 
-        back()->with('error', "Sorry your post was not saved, please try again.");
+       return back()->with('error', "Sorry your post was not saved, please try again.");
 
     }
+
 
     public function edit($post_id)
     {
