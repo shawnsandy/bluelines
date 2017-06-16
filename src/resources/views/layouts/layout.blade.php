@@ -75,10 +75,13 @@
             @include("bluelines::partials.nav")
         </div>
     </div>
-    <hr>
-</div>
 
-@yield('content')
+</div>
+<hr>
+<section style="padding: 40px 0">
+    @yield('content')
+</section>
+
 <footer>
     <hr>
     <p class="text-center">Powered By Laravel {{ app()->version() }} </p>
