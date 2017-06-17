@@ -16,8 +16,19 @@
 
         protected $fillable = ["name", "description", "image"];
 
-        public function content() {
+        public function content()
+        {
             return $this->belongsToMany(Blueline::class);
+        }
+
+        /**
+         * @param        $query
+         * @param        $category_id
+         * @return mixed
+         */
+        public function scopeWithPost($query, $category_id)
+        {
+            return $query->with('content')->where('id', $category_id);
         }
 
     }
