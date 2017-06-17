@@ -32,15 +32,7 @@
         public function store(BluelineRequest $request)
         {
 
-            $data = $request->all();
-
-            $data['author_id'] = 1;
-
-            if ($feature_image = $request->upload())
-                $data['featured_image'] = $feature_image;
-
-
-            if ($post = Blueline::create($data)) {
+            if ($post = $request->save()) {
 
                 $request->syncRelated($post);
                 $request->createOrUpdateSlug($post);
@@ -68,7 +60,7 @@
         public function update(BluelineRequest $request, $post_id)
         {
 
-            if ($post = $request->updatePost($post_id)):
+            if ($post = $request->update($post_id)):
 
                 $request->syncRelated($post);
 

@@ -69,15 +69,25 @@
             endif;
         }
 
-        public function updatePost($id)
+        public function update($id)
         {
             $data = $this->input();
+            $data['author_id'] = 1;
 
             if ($feature_image = $this->upload())
                 $data['featured_image'] = $feature_image;
 
             return Blueline::updateOrCreate(["id" => $id], $data);
 
+        }
+
+        public function save() {
+            $data = $this->input();
+
+            if($feature_image = $this->upload())
+                $data["feature_image"] = $feature_image;
+
+            return Blueline::create($data);
         }
 
     }
