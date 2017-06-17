@@ -83,7 +83,7 @@
 
         public function save() {
             $data = $this->input();
-
+            $data['author_id'] = 1;
             if($feature_image = $this->upload())
                 $data["feature_image"] = $feature_image;
 
