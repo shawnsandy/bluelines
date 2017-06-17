@@ -43,7 +43,6 @@
             if ($post = Blueline::create($data)) {
 
                 $request->syncRelated($post);
-
                 $request->createOrUpdateSlug($post);
 
                 return redirect("/bluelines/posts/{$post->id}/edit")
@@ -69,12 +68,7 @@
         public function update(BluelineRequest $request, $post_id)
         {
 
-            $data = $request->input();
-
-            if ($feature_image = $request->upload())
-                $data['featured_image'] = $feature_image;
-
-            if ($post = Blueline::updateOrCreate(["id" => $post_id], $data)):
+            if ($post = $request->updatePost($post_id)):
 
                 $request->syncRelated($post);
 
