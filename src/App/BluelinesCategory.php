@@ -26,7 +26,7 @@
          * @param        $category_id
          * @return mixed
          */
-        public function scopeWithPost($query, $category_id)
+        public function scopeWithContent($query, $category_id)
         {
             return $query->with('content')->where('id', $category_id);
         }
