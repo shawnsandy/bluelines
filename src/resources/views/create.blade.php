@@ -5,27 +5,21 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-7">
-                <h3>Create a New Post</h3>
-                <hr>
 
-                {{ Form::open(["url" => "/bluelines/posts", "files" => true]) }}
-
-                @include("bluelines::partials.forms.post")
-
-                <p class="form-group text-right">
-                    <button class="btn btn-primary" type="submit">Create Post</button>
-                    <button class="btn btn-default" type="reset">Clear</button>
-                </p>
-
-                {{ Form::close() }}
-
+            <div class="col-md-9">
+                <aside class="panel panel-default">
+                    <div class="panel-body">
+                        <h3>Create a new post</h3>
+                        <hr>
+                        @include("bluelines::partials.blueline-create")
+                    </div>
+                </aside>
             </div>
 
-            <div class="col-md-5">
-                <h3>Content Options</h3>
+            <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-body">
+                        <h3>Edit Post</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut distinctio nesciunt numquam sapiente
                             voluptatem? Adipisci, commodi consectetur delectus deserunt dolore eos error esse illo illum iure
                             ullam vel, voluptatem voluptatum.</p>

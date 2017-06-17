@@ -61,11 +61,11 @@ class BluelineRequest extends FormRequest
 
     public function upload() {
 
-        if ($this->hasFile("featured_image") && $this->file("featured_image")->isValid()) {
-
+        if ($this->hasFile("featured_image") && $this->file("featured_image")->isValid()) :
             return $this->file('featured_image')->store('img', 'public');
-
-        }
+        else :
+            return null;
+        endif;
     }
 
 }
