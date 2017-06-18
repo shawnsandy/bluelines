@@ -64,7 +64,11 @@ class BluelinesServicesProvider extends ServiceProvider
 
         include_once __DIR__. "/components.php";
 
-        view()->composer(["bluelines::partials.forms.post", "bluelines::index" ], function($view) {
+        view()->composer(
+            ["bluelines::partials.forms.post",
+                "bluelines::components.post-categories",
+                "bluelines::components.post-tags" ],
+            function($view) {
 
             $categories_list = BluelinesCategory::orderBy("name", "ASC")->pluck("name", "id");
 

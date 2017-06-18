@@ -13,8 +13,8 @@
             {{ Form::close() }}
         </div>
     </li>
-    @if(count($categories))
-        @foreach($categories as $category => $name)
+    @if(count($categories_list))
+        @foreach($categories_list as $category => $name)
             <li class="list-group-item"> {{ $name }} </li>
         @endforeach
     @endif

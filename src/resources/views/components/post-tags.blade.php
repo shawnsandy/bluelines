@@ -8,9 +8,9 @@
         </div>
     </li>
 
-@if(count($tags))
+@if(count($tags_list))
     <li class="list-group-item">
-        @foreach($tags as $tag => $name)
+        @foreach($tags_list as $tag => $name)
             {{ $name }}
             <a href="/bluelines/tags/delete/{{ $tag }}" class="delete-btn"><i class="fa fa-times"></i></a>
         @endforeach
