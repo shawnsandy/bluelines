@@ -3,6 +3,7 @@
 namespace ShawnSandy\Bluelines;
 
 use Illuminate\Support\ServiceProvider;
+use ShawnSandy\Bluelines\App\Blueline;
 use ShawnSandy\Bluelines\App\BluelinesCategory;
 use ShawnSandy\Bluelines\App\BluelinesTag;
 
@@ -76,6 +77,12 @@ class BluelinesServicesProvider extends ServiceProvider
 
             $view->with(compact("categories_list", "tags_list"));
 
+        });
+
+        view()->composer(["bluelines::components.recent-content"], function($view){
+            $recent_posts = Blueline::latest(10)->select("title", "id")->get();
+
+            $view->with(compact("recent_posts"));
         });
 
     }
