@@ -46,8 +46,8 @@ class BluelinesServicesProvider extends ServiceProvider
          */
         $this->publishes(
             [
-                __DIR__ . '/config/config.php' => config_path('bluelines/settings.php'),
-                __DIR__ . '/config/forms.php' => config_path('bluelines/forms.php'),
+                __DIR__ . '/config/config.php' => config_path('bluelines.php'),
+                __DIR__ . '/config/forms/' => config_path('forms/'),
             ],
             'bluelines-config'
         );
