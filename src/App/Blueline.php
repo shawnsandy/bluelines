@@ -43,9 +43,9 @@
          * @param $query
          * @return mixed
          */
-        public function scopeLatest($query)
+        public function scopeLatest($query, $limit = 15)
         {
-            return $query->orderBy("id", "DESC");
+            return $query->orderBy("id", "DESC")->take($limit);
         }
 
         /**

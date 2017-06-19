@@ -25,4 +25,9 @@
             return $query->with("content")->where("id", $category_id);
         }
 
+        public function scopeList($query)
+        {
+            return $query->orderBy("tag_name", "DESC")->pluck("tag_name", "id");
+        }
+
     }

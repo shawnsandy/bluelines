@@ -71,9 +71,9 @@ class BluelinesServicesProvider extends ServiceProvider
                 "bluelines::components.post-tags" ],
             function($view) {
 
-            $categories_list = BluelinesCategory::orderBy("name", "ASC")->pluck("name", "id");
+            $categories_list = BluelinesCategory::list();
 
-            $tags_list = BluelinesTag::orderBy("tag_name", "ASC")->pluck("tag_name", "id");
+            $tags_list = BluelinesTag::list();
 
             $view->with(compact("categories_list", "tags_list"));
 

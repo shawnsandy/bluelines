@@ -15,18 +15,9 @@
                     </div>
                 </aside>
             </div>
-
             <div class="col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <h3>Edit Post</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut distinctio nesciunt numquam sapiente
-                            voluptatem? Adipisci, commodi consectetur delectus deserunt dolore eos error esse illo illum iure
-                            ullam vel, voluptatem voluptatum.</p>
-                    </div>
-                </div>
+              @include("bluelines::components.recent-content")
             </div>
-
 
         </div>
     </div>

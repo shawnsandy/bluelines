@@ -26,15 +26,15 @@
 
     <div class="clearfix">
 
+        <div class="col-md-6">
+            {{ $fields["featured_image"] }}
+        </div>
+
         <div class="col-md-3">
             {{ $fields["status"] }}
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
             {{ $fields["featured"] }}
-        </div>
-
-        <div class="col-md-7">
-            {{ $fields["featured_image"] }}
         </div>
 
     </div>
@@ -61,7 +61,7 @@
 <style>
     .file-input-box {
         color: #FFF;
-        background-color: darkgrey;
+        background-color: #428bca;
         padding: 10px;
         border-radius: 3px;
         text-transform: uppercase;

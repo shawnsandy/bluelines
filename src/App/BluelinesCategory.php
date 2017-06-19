@@ -31,4 +31,9 @@
             return $query->with('content')->where('id', $category_id);
         }
 
+        public function scopeList($query)
+        {
+            return $query->orderBy("name", "DESC")->pluck("name", "id");
+        }
+
     }
