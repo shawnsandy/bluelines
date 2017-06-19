@@ -79,13 +79,13 @@ gulp.task('sass', function() {
 gulp.task('package', function() {
     return gulp.src('./src/resources/assets/**/*.*', { 'base': './src/resources/assets/' })
         .pipe(changed('./src/resources/assets/**/*.*'))
-        .pipe(gulp.dest('../../public/assets/'))
+        .pipe(gulp.dest('../../resources/assets/bluelines'))
 })
 
 gulp.task("dev-public", function() {
     return gulp.watch('./src/public', ['sass'], { "base": "./src/public/" })
-    pipe(changed("../../public/**/*.*"))
-    pipe(gulp.dest("../../public/"))
+    pipe(changed("../../public/bluelines/*.*"))
+    pipe(gulp.dest("../../public/bluelines"))
 
 })
 

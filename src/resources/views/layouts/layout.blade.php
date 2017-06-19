@@ -15,14 +15,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
+
+        body {
+            padding: 0 100px;
+        }
+
         p {
             font-size: 16px;
         }
 
-
         .form-control {
             border-radius: 0;
         }
+
         .hide {
             display: none;
         }
@@ -34,17 +39,18 @@
         footer {
             padding: 50px 0;
         }
+
     </style>
     @stack('styles')
     @stack('inline-styles')
 </head>
 
 <body>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
             <h1>
-                @yield('page_title')
+                <a href="/bluelines"> @yield('page_title')</a>
             </h1>
 
 
@@ -55,14 +61,30 @@
             </p>
         </div>
         <div class="col-md-12">
-            @include('gitcontent::partials.messages')
+            @include('extras::partials.messages')
         </div>
     </div>
 </div>
 <hr>
-@yield('content')
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="h1">Content Admin</div>
+        </div>
+        <div class="col-md-8 text-right">
+            @include("bluelines::partials.nav")
+        </div>
+    </div>
+
+</div>
+<hr>
+<section style="padding: 40px 0">
+    @yield('content')
+</section>
+
 <footer>
-    <p class="text-center">Footer </p>
+    <hr>
+    <p class="text-center">Powered By Laravel {{ app()->version() }} </p>
 </footer>
 </body>
 
@@ -71,6 +93,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+
 @stack('scripts')
 @stack('inline_scripts')
 </html>

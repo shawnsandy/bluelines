@@ -7,39 +7,78 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-**Note:** To replace ```Shawn Sandy``` ```shawnsandy``` ```https://github.com/shawnsandy``` ```shawnsandy04@gmail.com``` ```shawnsandy``` ```bluelines``` ```A content design and management system for apps``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files. You can change them manually or run `$ php prefill.php` in the command line to make all replacements at once. Delete the file prefill.php as well.
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
-
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practises by being named the following.
-
-```
-bin/        
-config/
-src/
-tests/
-vendor/
-```
+A content design and management system for apps
 
 
 ## Install
 
-Via Composer
+Via Composer - dev-master branch ( probably the most stable)
 
 ``` bash
-$ composer require shawnsandy/bluelines
+$ composer require shawnsandy/bluelines:dev-master
+```
+## Setup
+
+Add Bluelines provider to your app.php `/config/app.php` 
+
+```php
+
+ 'providers' => [     
+     Illuminate\Validation\ValidationServiceProvider::class,
+     Illuminate\View\ViewServiceProvider::class,
+    // .....
+    
+     /*
+      * Package Service Providers...
+      */
+     ShawnSandy\Bluelines\BluelinesServicesProvider::class,
+ ];
+ 
+```
+
+Next add the Bluelines Facade (Blue) to your aliases 
+
+```php
+
+'providers' = [
+    
+]
+
+'aliases' => [
+        'Blue' => ShawnSandy\Bluelines\BluelinesFacade::class,    
+    ]
+    
+```
+
+You will also need to ensure that required packages are in your app config, if they are not you can add them yourself or use the `PackageProvider.php
+
+__Add yourself__
+```php
+
+'providers' => [
+    ShawnSandy\Dash\DashServicesProvider::class,
+    ShawnSandy\Extras\ExtrasServicesProvider::class,
+]
+
+'aliases' => [  
+    "DashForms" => ShawnSandy\Dash\Builder\GenerateFormFieldsFacade::class,
+    'Extras' => ShawnSandy\Extras\ExtrasFacade::class,  
+]
+
+```
+
+__Add the `PackagesProvider.php` to the `config\app.php`
+
+```php
+'providers = [
+    ShawnSandy\Dash\PackagesProvider::class,
+    ]
 ```
 
 ## Usage
 
-``` php
-
-/////
-
-```
+See the docs [docs](/docs)
 
 ## Change log
 
