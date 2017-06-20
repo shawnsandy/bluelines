@@ -6,10 +6,10 @@
      * Time: 12:45 AM
      */
 
-    Html::macro("postImg", function ($imgSrc = null, $parameters = "?w=800") {
+    Html::macro("postImg", function ($imgSrc = null, $parameters = "?w=800", $path = "/extras/glide/") {
 
-        $src = Storage::url($imgSrc);
-        $img = "/extras/public{$src}{$parameters}";
+        $src = $imgSrc;
+        $img = "{$path}{$src}{$parameters}";
         return $img;
 
     });
