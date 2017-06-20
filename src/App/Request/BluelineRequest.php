@@ -63,7 +63,7 @@
         {
 
             if ($this->hasFile("featured_image") && $this->file("featured_image")->isValid()) :
-                return $this->file('featured_image')->store('img', 'public');
+                return $this->file('featured_image')->store('img');
             else :
                 return null;
             endif;
