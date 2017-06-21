@@ -32,13 +32,15 @@
         public function store(BluelineRequest $request)
         {
 
+
+
             if ($post = $request->save()) {
 
                 $request->syncRelated($post);
                 $request->createOrUpdateSlug($post);
 
-                return redirect("/bluelines/posts/{$post->id}/edit")
-                    ->with('success', "Your post {$post->title} was  created");
+                return back()
+                    ->with('success', "Your post \" $post->title \" was  created. Would you like to add another post?");
 
             }
 
@@ -59,6 +61,7 @@
 
         public function update(BluelineRequest $request, $post_id)
         {
+            dd($request->all());
 
             if ($post = $request->update($post_id)):
 
