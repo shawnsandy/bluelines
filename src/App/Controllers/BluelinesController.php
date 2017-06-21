@@ -40,7 +40,7 @@
                 $request->createOrUpdateSlug($post);
 
                 return back()
-                    ->with('success', "Your post \" $post->title \" was  created. Would you like to add another post?");
+                    ->with('success', "Congrats your post \" $post->title \" was  created! Would you like to add another post?");
 
             }
 
@@ -61,7 +61,6 @@
 
         public function update(BluelineRequest $request, $post_id)
         {
-            dd($request->all());
 
             if ($post = $request->update($post_id)):
 
