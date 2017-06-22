@@ -68,5 +68,15 @@
             return $query->where("id", $post_id)->with("categories", "tags")->first();
         }
 
+        public function getWasCreatedAttribute($query)
+        {
+            return $this->created_at->diffForHumans();
+        }
+
+        public function getWasUpdatedAttribute($query)
+        {
+            return $this->updated_at->diffForHumans();
+        }
+
 
     }
