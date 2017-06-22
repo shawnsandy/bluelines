@@ -7,7 +7,7 @@
 </h1>
 
 <div class="meta">
-    Posted : {{ $post->created_at->diffForHumans() }}
+    Posted : {{ $post->was_created }}
 </div>
 <hr>
 <p>
