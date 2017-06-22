@@ -11,7 +11,7 @@
 
     use Illuminate\Routing\Controller;
     use ShawnSandy\Bluelines\App\Blueline;
-    use ShawnSandy\Bluelines\App\Request\BluelineRequest;
+    use ShawnSandy\Bluelines\App\Request\BluelineFormRequest;
 
     class BluelinesController extends Controller
     {
@@ -29,16 +29,14 @@
             return view("bluelines::create");
         }
 
-        public function store(BluelineRequest $request)
+        public function store(BluelineFormRequest $request)
         {
 
+
+
             if ($post = $request->save()) {
-
-                $request->syncRelated($post);
-                $request->createOrUpdateSlug($post);
-
-                return redirect("/bluelines/posts/{$post->id}/edit")
-                    ->with('success', "Your post {$post->title} was  created");
+                return back()
+                    ->with('success', "Congrats your post \" $post->title \" was  created! Would you like to add another post?");
 
             }
 
@@ -57,17 +55,12 @@
         }
 
 
-        public function update(BluelineRequest $request, $post_id)
+        public function update(BluelineFormRequest $request, $post_id)
         {
 
             if ($post = $request->update($post_id)):
 
-                $request->syncRelated($post);
-
-                $request->createOrUpdateSlug($post);
-
-                return back()
-                    ->with("success", "Your post has been updated!");
+                return back()->with("success", "Your post has been updated!");
 
             endif;
 

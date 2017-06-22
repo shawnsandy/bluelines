@@ -12,7 +12,7 @@
     use Illuminate\Foundation\Http\FormRequest;
     use ShawnSandy\Bluelines\App\Blueline;
 
-    class BluelineRequest extends FormRequest
+    class BluelineFormRequest extends FormRequest
     {
 
         public function authorize()
@@ -71,23 +71,34 @@
 
         public function update($id)
         {
+
             $data = $this->input();
             $data['author_id'] = 1;
 
             if ($feature_image = $this->upload())
                 $data['featured_image'] = $feature_image;
 
-            return Blueline::updateOrCreate(["id" => $id], $data);
+            if ($post = Blueline::updateOrCreate(["id" => $id], $data)):
+                $this->syncRelated($post);
+                return $post;
+            endif;
+
+            return false;
 
         }
 
-        public function save() {
+        public function save()
+        {
             $data = $this->input();
             $data['author_id'] = 1;
-            if($feature_image = $this->upload())
-                $data["feature_image"] = $feature_image;
+            if ($feature_image = $this->upload())
+                $data["featured_image"] = $feature_image;
 
-            return Blueline::create($data);
+            if ($post = Blueline::create($data)):
+                $this->syncRelated($post);
+                return $post;
+            endif;
+            return false;
         }
 
     }

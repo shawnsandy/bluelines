@@ -68,5 +68,23 @@
             return $query->where("id", $post_id)->with("categories", "tags")->first();
         }
 
+        public function getWasCreatedAttribute($query)
+        {
+            return $this->created_at->diffForHumans();
+        }
 
+        public function getWasUpdatedAttribute($query)
+        {
+            return $this->updated_at->diffForHumans();
+        }
+
+
+        public function getTheExcerptAttribute($value)
+        {
+            if(!empty($value)):
+                return $value;
+            else :
+                return strip_tags(str_limit($this->body, 255));
+            endif;
+        }
     }

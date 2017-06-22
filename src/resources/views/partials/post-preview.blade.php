@@ -7,9 +7,9 @@
 </h1>
 
 <div class="meta">
-    Posted : {{ $post->created_at->diffForHumans() }}
+    Posted : {{ $post->was_created }} Updated : {{ $post->was_updated }}
 </div>
 <hr>
 <p>
-    {!! $post->excerpt !!}
+    {!! $post->the_excerpt !!}
 </p>
