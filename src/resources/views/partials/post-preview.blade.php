@@ -7,7 +7,7 @@
 </h1>
 
 <div class="meta">
-    Posted : {{ $post->was_created }}
+    Posted : {{ $post->was_created }} Updated : {{ $post->was_updated }}
 </div>
 <hr>
 <p>
