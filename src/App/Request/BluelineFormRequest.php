@@ -12,7 +12,7 @@
     use Illuminate\Foundation\Http\FormRequest;
     use ShawnSandy\Bluelines\App\Blueline;
 
-    class BluelineForm extends FormRequest
+    class BluelineFormRequest extends FormRequest
     {
 
         public function authorize()
@@ -96,10 +96,8 @@
 
             if ($post = Blueline::create($data)):
                 $this->syncRelated($post);
-
                 return $post;
             endif;
-
             return false;
         }
 

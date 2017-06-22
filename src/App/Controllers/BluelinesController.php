@@ -11,7 +11,7 @@
 
     use Illuminate\Routing\Controller;
     use ShawnSandy\Bluelines\App\Blueline;
-    use ShawnSandy\Bluelines\App\Request\BluelineForm;
+    use ShawnSandy\Bluelines\App\Request\BluelineFormRequest;
 
     class BluelinesController extends Controller
     {
@@ -29,7 +29,7 @@
             return view("bluelines::create");
         }
 
-        public function store(BluelineForm $request)
+        public function store(BluelineFormRequest $request)
         {
 
 
@@ -55,7 +55,7 @@
         }
 
 
-        public function update(BluelineForm $request, $post_id)
+        public function update(BluelineFormRequest $request, $post_id)
         {
 
             if ($post = $request->update($post_id)):
