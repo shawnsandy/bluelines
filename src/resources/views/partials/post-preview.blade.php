@@ -11,5 +11,5 @@
 </div>
 <hr>
 <p>
-    {!! $post->excerpt !!}
+    {!! $post->the_excerpt !!}
 </p>

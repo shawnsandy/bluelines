@@ -79,4 +79,12 @@
         }
 
 
+        public function getTheExcerptAttribute($value)
+        {
+            if(!empty($value)):
+                return $value;
+            else :
+                return strip_tags(str_limit($this->body, 255));
+            endif;
+        }
     }
