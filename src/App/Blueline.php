@@ -87,4 +87,5 @@
                 return strip_tags(str_limit($this->body, 255));
             endif;
         }
+
     }
