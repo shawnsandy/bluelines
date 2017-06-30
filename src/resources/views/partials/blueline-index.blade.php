@@ -16,12 +16,12 @@
         <tbody>
         @foreach($content as $post)
             <tr>
-                <td>{{ $post->id }}</td>
+                <th>{{ $post->id }}</th>
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->status }}</td>
                 <td>{{ $post->created_at }}</td>
                 <td class="text-center">
-                    <a href="/bluelines/posts/{{ $post->id }}/edit" class="small">
+                    <a href="{{ $edit_url or "/bluelines/posts/" }}{{ $post->id }}/edit" class="small">
                         <i class="fa fa-search"></i> View/Edit
                     </a>
                 </td>
