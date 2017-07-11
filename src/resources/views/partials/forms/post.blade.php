@@ -26,15 +26,15 @@
 
     <div class="clearfix">
 
-        <div class="col-md-6">
-            {{ $fields["featured_image"] }}
-        </div>
-
         <div class="col-md-3">
             {{ $fields["status"] }}
         </div>
         <div class="col-md-3">
             {{ $fields["featured"] }}
+        </div>
+
+        <div class="col-md-6">
+            {{ $fields["featured_image"] }}
         </div>
 
     </div>
