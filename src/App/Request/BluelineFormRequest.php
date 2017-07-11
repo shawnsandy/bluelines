@@ -9,6 +9,7 @@
     namespace ShawnSandy\Bluelines\App\Request;
 
 
+    use Auth;
     use Illuminate\Foundation\Http\FormRequest;
     use ShawnSandy\Bluelines\App\Blueline;
 
@@ -37,7 +38,7 @@
         /**
          * Sync /  attach all related fields to pivot tables
          *
-         * @param $post
+         * @param $post post object
          */
         public function syncRelated($post)
         {
@@ -73,7 +74,7 @@
         {
 
             $data = $this->input();
-            $data['author_id'] = 1;
+            $data['author_id'] = Auth::id() ? Auth::id() : 1;
 
             if ($feature_image = $this->upload())
                 $data['featured_image'] = $feature_image;
@@ -90,7 +91,7 @@
         public function save()
         {
             $data = $this->input();
-            $data['author_id'] = 1;
+            $data['author_id'] = Auth::id() ? Auth::id() : 1;;
             if ($feature_image = $this->upload())
                 $data["featured_image"] = $feature_image;
 
