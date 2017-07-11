@@ -9,10 +9,9 @@ __Get the latest content__
 
 ``` php
 
-$content = Blueline::latestPaginated(20);
+$content = Blueline::latest(20);
 
 ```  
-
 
 
 __Get the latest content with pagination__
@@ -23,9 +22,6 @@ __Get the latest content with pagination__
 $content = Blueline::latestPaginated(20);
 
 ```  
-
-__Get a single post__
-
 
 __Get a single post using id__
 
