@@ -10,10 +10,13 @@
 
 
     use Illuminate\Database\Eloquent\Model;
+    use ShawnSandy\Extras\Traits\ModelExtras;
+
 
     class Blueline extends Model
     {
 
+        use ModelExtras;
 
         protected $fillable = [
             "title", "slug", "status", "body", "featured", "excerpt", "featured_image", "author_id"
