@@ -43,7 +43,7 @@
          * @param $query
          * @return mixed
          */
-        public function scopeLatest($query, $limit = 15)
+        public function scopeLatest($query, $limit = 20)
         {
             return $query->orderBy("id", "DESC")->take($limit);
         }
@@ -87,4 +87,5 @@
                 return strip_tags(str_limit($this->body, 255));
             endif;
         }
+
     }
