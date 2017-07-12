@@ -13,7 +13,6 @@ $content = Blueline::latest(20);
 
 ```  
 
-
 __Get the latest content with pagination__
 
 
