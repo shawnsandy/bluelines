@@ -22,6 +22,8 @@
             "title", "slug", "status", "body", "featured", "excerpt", "featured_image", "author_id"
         ];
 
+        protected $with = ["categories", "tags"];
+
         public function categories()
         {
             return $this->belongsToMany(BluelinesCategory::class);
