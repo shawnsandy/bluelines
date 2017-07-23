@@ -78,12 +78,6 @@ class BluelinesServicesProvider extends ServiceProvider
 
         });
 
-        view()->composer(["bluelines::components.recent-content"], function($view){
-            $recent_posts = Blueline::latest(10)->select("title", "id")->get();
-            $view->with(compact("recent_posts"));
-        });
-
-
 
     }
 
