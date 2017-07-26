@@ -86,8 +86,8 @@
 
         public function getTheExcerptAttribute($value)
         {
-            if(!empty($value)):
-                return $value;
+            if(!empty($this->excerpt)):
+                return $this->excerpt;
             else :
                 return strip_tags(str_limit($this->body, 255));
             endif;
@@ -95,10 +95,11 @@
 
         public function getPostThumbnailAttribute($value)
         {
-            if(empty($value))
-            return null ;
 
-            return "/extras/glide/".$post->feature_image ;
+            if(empty($this->featured_image))
+                return null;
+
+            return "/extras/glide/".$this->featured_image ;
 
         }
 

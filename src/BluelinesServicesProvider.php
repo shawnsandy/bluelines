@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use ShawnSandy\Bluelines\App\Blueline;
 use ShawnSandy\Bluelines\App\BluelinesCategory;
 use ShawnSandy\Bluelines\App\BluelinesTag;
+use Illuminate\Database\Eloquent\Factory;
 
 /**
  * Class Provider
@@ -77,10 +78,6 @@ class BluelinesServicesProvider extends ServiceProvider
 
         });
 
-        view()->composer(["bluelines::components.recent-content"], function($view){
-            $recent_posts = Blueline::latest(10)->select("title", "id")->get();
-            $view->with(compact("recent_posts"));
-        });
 
     }
 
@@ -100,6 +97,19 @@ class BluelinesServicesProvider extends ServiceProvider
             'Blue', function () {
             return new BluelinesApp();
         });
+
+        $this->registerFactoriesPath(__DIR__.'/factories');
+    }
+
+    /**
+     * Register factories.
+     *
+     * @param  string  $path
+     * @return void
+     */
+    protected function registerFactoriesPath($path)
+    {
+        $this->app->make(Factory::class)->load($path);
     }
 
 
