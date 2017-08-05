@@ -1,5 +1,5 @@
 @php
-    $recent_posts = \ShawnSandy\Bluelines\App\Blueline::latest(5)->select("title", "id", "updated_at")->get();
+    $recent_posts = Blue::recentPostsUpdates(7);
 @endphp
 <ul class="list-group">
     <li class="list-group-item">
