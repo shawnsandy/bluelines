@@ -16,6 +16,8 @@
 
     Html::component("ckeditor", "bluelines::components.ckeditor", []);
 
+    Html::component("tinymce", "bluelines::components.tinymce", []);
+
     Html::component("blueTags", "bluelines::components.post-tags", ["tags" => [], "title"]);
 
     Html::component("blueCategories", "bluelines::components.post-categories", ["categories" => [], "title"]);
