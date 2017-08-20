@@ -11,6 +11,7 @@
 
     use Illuminate\Database\Eloquent\Model;
     use ShawnSandy\Extras\Traits\ModelExtras;
+    use App\User;
 
 
     class Blueline extends Model
@@ -42,6 +43,10 @@
         public function meta()
         {
             return $this->hasMany(BluelinesMeta::class);
+        }
+
+        public function user() {
+            return $this->belongsTo(User::class);
         }
 
         /**
