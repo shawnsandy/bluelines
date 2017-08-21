@@ -4,9 +4,8 @@ namespace ShawnSandy\Bluelines\Traits;
 
 trait Blue {
 
-	public function post()
-		    {
-		return $this->hasMany(User::class)  ;
+	public function posts() {
+		return $this->hasMany(User::class);
 
 	}
 }

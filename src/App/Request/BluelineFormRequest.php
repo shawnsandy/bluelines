@@ -22,7 +22,7 @@
 
         }
 
-        public function rules()
+        public function rules ()
         {
 
             return [
