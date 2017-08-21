@@ -38,7 +38,7 @@ class BluelinesServicesProvider extends ServiceProvider
          */
         $this->publishes(
             [
-                __DIR__ . '/resources/assets/js' => public_path('/assets/bluelines/js/')
+                __DIR__ . '/resources/assets/js' => public_path('/assets/bluelines/')
             ], 'bluelines-assets'
         );
 
