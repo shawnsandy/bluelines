@@ -74,7 +74,6 @@
         {
 
             $data = $this->input();
-            $data['author_id'] = Auth::id() ? Auth::id() : 1;
             $data["type"] = $post_type ;
 
             if ($feature_image = $this->upload())
@@ -92,12 +91,12 @@
         public function save($post_type)
         {
             $data = $this->input();
-            $data['author_id'] = Auth::id() ? Auth::id() : 1;
             $data["post_type"] = $post_type;
+
             if ($feature_image = $this->upload())
                 $data["featured_image"] = $feature_image;
 
-            if ($post = Blueline::create($data)):
+            if ($post = Auth::user()->content()->create($data)):
                 $this->syncRelated($post);
                 return $post;
             endif;
