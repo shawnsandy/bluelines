@@ -2,10 +2,12 @@
 
 namespace ShawnSandy\Bluelines\Traits;
 
+use ShawnSandy\Bluelines\App\Blueline;
+
 trait Blue {
 
-	public function posts() {
-		return $this->hasMany(User::class);
+	public function content() {
+		return $this->hasMany(Blueline::class);
 
 	}
 }
