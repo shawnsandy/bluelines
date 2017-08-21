@@ -7,6 +7,8 @@
             path_absolute: "/",
             selector: editor,
             branding: false,
+            skin: "lightgray",
+            skin_url: '/assets/bluelines/tinymce-dash',
             plugins: [
                 "advlist autolink lists link image charmap print preview hr anchor pagebreak",
                 "searchreplace wordcount visualblocks visualchars code fullscreen",

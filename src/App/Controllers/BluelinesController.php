@@ -16,6 +16,13 @@
     class BluelinesController extends Controller
     {
 
+        public $post_type = "post";
+
+
+        public function __construct() {
+
+        }
+
         public function index()
         {
             $content = Blueline::latestPaginated();
@@ -34,7 +41,7 @@
 
 
 
-            if ($post = $request->save()) {
+            if ($post = $request->save($this->post_type)) {
                 return back()
                     ->with('success', "Congrats your post \" $post->title \" was  created! Would you like to add another post?");
 
@@ -58,7 +65,7 @@
         public function update(BluelineFormRequest $request, $post_id)
         {
 
-            if ($post = $request->update($post_id)):
+            if ($post = $request->update($post_id, $this->post_type)) :
 
                 return back()->with("success", "Your post has been updated!");
 
