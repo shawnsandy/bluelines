@@ -20,7 +20,7 @@
         use ModelExtras;
 
         protected $fillable = [
-            "title", "slug", "status", "body", "featured", "excerpt", "featured_image", "author_id"
+            "title", "slug", "status", "body", "featured", "excerpt", "featured_image"
         ];
 
 //        protected $with = ["categories", "tags"];
