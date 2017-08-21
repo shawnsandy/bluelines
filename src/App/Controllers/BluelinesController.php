@@ -65,7 +65,7 @@
         public function update(BluelineFormRequest $request, $post_id)
         {
 
-            if ($post = $request->update($post_id, $this->post_type)):
+            if ($post = $request->update($post_id, $this->post_type)) :
 
                 return back()->with("success", "Your post has been updated!");
 
