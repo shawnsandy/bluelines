@@ -16,9 +16,9 @@ class AddMetaColsToBluelines extends Migration
 
         Schema::table('bluelines', function (Blueprint $table) {
 
-            // $table->json("meta")->after('type');
-            // $table->json("tags")->after('type');
-            // $table->json("options")->after('type');
+            $table->json("meta")->after('type');
+            $table->json("tags")->after('type');
+            $table->json("options")->after('type');
 
         });
 
